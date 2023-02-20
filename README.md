@@ -1,6 +1,6 @@
 # Project 12 - SportSee Analytics Dashboard
 
-This Frontend project is created with [Create React App](https://github.com/facebook/create-react-app). It is an analytics dashboard with a separately frontend part and a backend part. The application is developed with Node.js version 6.14.2 and React version 18.2.0.
+This Frontend project is created with [Create React App](https://github.com/facebook/create-react-app). It is an analytics dashboard with a separately frontend part and a backend part. The application is developed with Node.js version 16.14.2 and React version 18.2.0.
 
 1. To test this application, you need fist to clone the backend application from [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard). So you can run `yarn start` on a terminal and it will start on the `port 3000`.
 
