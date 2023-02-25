@@ -1,0 +1,13 @@
+
+@import '../../style/variables.scss';
+
+.activity {
+  > p {
+    margin-top: 2.4rem;
+    margin-left: 11rem;
+    margin-bottom: 6.45rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $black;
+  }
+}

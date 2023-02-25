@@ -1,0 +1,19 @@
+@import '../../style/variables.scss';
+
+.average {
+  width: 258px;
+  height: 263px;
+  background-color: #FF0000;
+  border: 1px solid blue;
+  border-radius: 5px;
+  color: $black;
+  font-weight: 500;
+
+  > p {
+    font-size: 15px;
+    color: white;
+    margin-left: 3.4rem;
+    margin-top: 0.5rem;
+  }
+}
+

@@ -1,4 +1,4 @@
-import "./Performance.scss";
+import "./BigPerformance.scss";
 import React from "react";
 import { useParams } from "react-router-dom";
 import PerformanceModel from "../../dataModels/PerformanceModel";
@@ -12,7 +12,7 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 
-const Performance = (props) => {
+const BigPerformance = (props) => {
   const { id } = useParams();
 
   console.log("Valeur de id: ", id);
@@ -27,8 +27,8 @@ const Performance = (props) => {
   );
 
   return (
-    <div className="performance">
-      <ResponsiveContainer >
+    <div className="Performance">
+      <ResponsiveContainer width="100%" aspect={3} >
         <RadarChart
           cx={"50%"}
           cy={"50%"}
@@ -50,4 +50,4 @@ const Performance = (props) => {
   );
 };
 
-export default Performance;
+export default BigPerformance;

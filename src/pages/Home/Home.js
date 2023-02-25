@@ -6,10 +6,17 @@ import useBrowserWidth from "../../service/useBrowserWidth";
 import useFetchService from "../../service/useFetchService";
 import UserInfosModel from "../../dataModels/UserInfosModel";
 import ActivityModel from "../../dataModels/ActivityModel";
+import AverageSessionsModel from '../../dataModels/AverageSessionsModel';
+import PerformanceModel from '../../dataModels/PerformanceModel';
 import Navbar from "../../components/Navbar/Navbar";
 import IconsBar from "../../components/IconsBar/IconsBar";
 import Message from '../../components/Message/Message';
 import Nutrients from '../../components/Nutrients/Nutrients';
+import TodayScore from '../../components/TodayScore/TodayScore';
+import Activity from '../../components/Activity/Activity';
+import AverageSessions from '../../components/AverageSessions/AverageSessions';
+import Performance from '../../components/Performance/Performance';
+
 
 
 const Home = (props) => {
@@ -17,8 +24,18 @@ const Home = (props) => {
 
   /* Service retoune sous forme d'objet toutes les données de l'utilisateur à partir de son ID */
 
-  const infos = useFetchService(id, "mainInfo");
-  const infosModel = new UserInfosModel(infos.userData);
+  const mainInfo = useFetchService(id, "mainInfo");
+  const infosModel = new UserInfosModel(mainInfo.userData);
+
+  const activity = useFetchService(id, "activity");
+  const activityModel = new ActivityModel(activity.userActivity);
+
+  const averageSessions = useFetchService(id, "averageSessions");
+  const averageSessionsModel = new AverageSessionsModel(averageSessions.userAverageSessions);
+
+  const performance = useFetchService(id, "performance");
+  const performanceModel = new PerformanceModel(performance.userPerformance);
+
   // console.log("Valeur de userData: ", infosModel.lastName);
 
   const browserWidth = useBrowserWidth();
@@ -43,36 +60,12 @@ const Home = (props) => {
             <Message infosModel={infosModel} />
 
             <section className="panorama">
-              <div className="wrapper-activity">
-                <div className="Activity">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Labore est architecto atque optio quos rerum delectus
-                  consequatur temporibus amet saepe. Tempore delectus possimus
-                  iure nam ab fugit inventore atque dicta.
-                </div>
-              </div>
+              <Activity activityModel={activityModel} />
 
               <div className="wrapper-other-charts">
-                <div className="Average">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur architecto earum commodi dolor, debitis quod iusto
-                  omnis optio, nobis, magni praesentium reiciendis eius aperiam
-                  a aliquid corrupti natus vero perspiciatis!
-                </div>
-
-                <div className="Performance">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Neque, accusantium, aperiam rem at ipsam fuga illo sint fugit
-                  quaerat alias id modi quas delectus tenetur commodi nobis
-                  eaque totam! Ipsa!
-                </div>
-                
-                <div className="Score">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                  est earum dolore doloremque dolores, facilis totam dicta modi
-                  sit impedit animi aut aperiam quam perspiciatis, quas
-                  consectetur. Ad, nostrum voluptatum.
-                </div>
+                <AverageSessions averageSessionsModel={averageSessionsModel} />
+                <Performance performanceModel={performanceModel} /> 
+                <TodayScore infosModel={infosModel} />
               </div>
 
               <Nutrients infosModel={infosModel} />

@@ -1,4 +1,4 @@
-import "./AverageSessions.scss";
+import "./BigAverageSessions.scss";
 import React from "react";
 import { useParams } from "react-router-dom";
 import AverageSessionsModel from "../../dataModels/AverageSessionsModel";
@@ -14,7 +14,7 @@ import {
   Legend,
 } from "recharts";
 
-const AverageSessions = (props) => {
+const BigAverageSessions = (props) => {
   const { id } = useParams();
 
   console.log("Valeur de id: ", id);
@@ -28,9 +28,9 @@ const AverageSessions = (props) => {
   console.log("Valeur de data fron Average Sessions: ", activityModel.sessions);
 
   return (
-    <div className="average-sessions">
-      <div>Durée moyenne des sessions</div>
-      <ResponsiveContainer width={'100%'} height={240}>
+    <div className="AverageSessions">
+      <p>Durée moyenne des sessions</p>
+      <ResponsiveContainer width="100%" aspect={3} >
         <LineChart          
           data={activityModel.sessions}
           // height={250}
@@ -55,4 +55,4 @@ const AverageSessions = (props) => {
   );
 };
 
-export default AverageSessions;
+export default BigAverageSessions;
