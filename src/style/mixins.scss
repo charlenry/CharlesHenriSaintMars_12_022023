@@ -1,1 +1,6 @@
 /* mixins.scss */
+@mixin google-fonts($font) {
+  @if ($font == 'Roboto') {
+    @import url('https://fonts.googleapis.com/css2?family=#{$font}:wght@100;400;500;700;900&display=swap');
+  }
+}

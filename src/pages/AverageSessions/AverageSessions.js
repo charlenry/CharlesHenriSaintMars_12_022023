@@ -1,8 +1,10 @@
+import "./AverageSessions.scss";
 import React from "react";
 import { useParams } from "react-router-dom";
 import AverageSessionsModel from "../../dataModels/AverageSessionsModel";
 import useFetchService from "../../service/useFetchService";
 import {
+  ResponsiveContainer,
   LineChart,
   Line,
   XAxis,
@@ -19,37 +21,37 @@ const AverageSessions = (props) => {
 
   const averageSessions = useFetchService(id, "averageSessions");
 
-  const activityModel = new AverageSessionsModel(averageSessions.userAverageSessions);
+  const activityModel = new AverageSessionsModel(
+    averageSessions.userAverageSessions
+  );
 
   console.log("Valeur de data fron Average Sessions: ", activityModel.sessions);
 
   return (
-    <>
-      <LineChart
-        width={500}
-        height={300}
-        data={activityModel.sessions}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis dataKey="sessionLength" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="sessionLength"
-          stroke="#8884d8"
-          
-        />
-        {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
-      </LineChart>
-    </>
+    <div className="average-sessions">
+      <div>Durée moyenne des sessions</div>
+      <ResponsiveContainer width={'100%'} height={240}>
+        <LineChart          
+          data={activityModel.sessions}
+          // height={250}
+          width={260}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <XAxis
+            dataKey="day"
+            tick={{stroke: "white"}}
+          />
+          <YAxis dataKey="sessionLength" />
+          <Tooltip />
+          <Line type="monotone" dataKey="sessionLength" stroke="#fff" />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

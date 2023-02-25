@@ -1,0 +1,13 @@
+// @import '../../style/variables.scss';
+.menu-icons p {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  color: white;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}

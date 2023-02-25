@@ -1,8 +1,10 @@
+import "./Performance.scss";
 import React from "react";
 import { useParams } from "react-router-dom";
 import PerformanceModel from "../../dataModels/PerformanceModel";
 import useFetchService from "../../service/useFetchService";
 import {
+  ResponsiveContainer,
   Radar,
   RadarChart,
   PolarGrid,
@@ -25,27 +27,26 @@ const Performance = (props) => {
   );
 
   return (
-    <>
-      <RadarChart
-        cx={300}
-        cy={300}
-        outerRadius={150}
-        width={550}
-        height={500}
-        data={performanceModel.performanceData}
-      >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="kind" />
-        <PolarRadiusAxis />
-        <Radar
-          name="RadarChart"
-          dataKey="value"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
-        />
-      </RadarChart>
-    </>
+    <div className="performance">
+      <ResponsiveContainer >
+        <RadarChart
+          cx={"50%"}
+          cy={"50%"}
+          data={performanceModel.performanceData}
+        >
+          <PolarGrid />
+          <PolarAngleAxis dataKey="kind" />
+          <PolarRadiusAxis />
+          <Radar
+            name="Performance"
+            dataKey="value"
+            stroke="#FF0101"
+            fill="#FF0101"
+            fillOpacity={0.6}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

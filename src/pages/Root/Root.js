@@ -1,3 +1,5 @@
+import './Root.scss';
+
 const Root = (props) => {
   return (
     <>

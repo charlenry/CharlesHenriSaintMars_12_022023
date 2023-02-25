@@ -2,6 +2,7 @@ import './style/app.scss';
 import Root from './pages/Root/Root';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import NotImplemented from './pages/NotImplemented/NotImplemented';
 import {Routes, Route} from 'react-router-dom';
 import TodayScore from './pages/TodayScore/TodayScore';
 import Activity from './pages/Activity/Activity';
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Root />} />
+        <Route path="/not-implemented" element={<NotImplemented />} />
         <Route path="/user/:id" element={<Home />} />
         <Route path="/user/:id/todayscore" element={<TodayScore />} />
         <Route path="/user/:id/activity" element={<Activity />} />
