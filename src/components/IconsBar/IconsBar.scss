@@ -1,8 +1,11 @@
 // @import '../../style/variables.scss';
-.menu-icons p {
-  transform: rotate(-90deg);
-  white-space: nowrap;
-  color: white;
+.icons-bar {
+  p {
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    color: white;
+  }
+  
 }
 
 .icons-container {

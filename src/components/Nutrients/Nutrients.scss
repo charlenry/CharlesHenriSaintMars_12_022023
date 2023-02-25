@@ -1,0 +1,21 @@
+
+.calories, .proteins, .carbs, .fats {
+  display: flex;
+  align-items: center;
+  padding: 3.2rem 0 3.2rem 3.2rem;
+
+  .text-container {
+    margin-left: 2.4rem;
+
+    .value {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .title {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}
+

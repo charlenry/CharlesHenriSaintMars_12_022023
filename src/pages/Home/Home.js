@@ -7,7 +7,9 @@ import useFetchService from "../../service/useFetchService";
 import UserInfosModel from "../../dataModels/UserInfosModel";
 import ActivityModel from "../../dataModels/ActivityModel";
 import Navbar from "../../components/Navbar/Navbar";
-import MenuIcons from "../../components/MenuIcons/MenuIcons";
+import IconsBar from "../../components/IconsBar/IconsBar";
+import Message from '../../components/Message/Message';
+import Nutrients from '../../components/Nutrients/Nutrients';
 
 
 const Home = (props) => {
@@ -36,12 +38,9 @@ const Home = (props) => {
       <div className="center">
         <div className="container">
           <Navbar id={infosModel.id} navbarWidth= {navbarWidth} />
-          <MenuIcons />
+          <IconsBar />
           <main className="main">
-            <section className="message">
-              <h1>Bonjour {infosModel.firstName}</h1>
-              <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-            </section>
+            <Message infosModel={infosModel} />
 
             <section className="panorama">
               <div className="wrapper-activity">
@@ -60,12 +59,14 @@ const Home = (props) => {
                   omnis optio, nobis, magni praesentium reiciendis eius aperiam
                   a aliquid corrupti natus vero perspiciatis!
                 </div>
+
                 <div className="Performance">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Neque, accusantium, aperiam rem at ipsam fuga illo sint fugit
                   quaerat alias id modi quas delectus tenetur commodi nobis
                   eaque totam! Ipsa!
                 </div>
+                
                 <div className="Score">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
                   est earum dolore doloremque dolores, facilis totam dicta modi
@@ -74,32 +75,7 @@ const Home = (props) => {
                 </div>
               </div>
 
-              <div className="wrapper-nutrients">
-                <div className="Calories">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Excepturi ex quae ipsa inventore voluptates aliquid, nostrum
-                  eius quidem tempora facilis quia neque aspernatur tempore
-                  dolore sequi culpa saepe architecto sit.
-                </div>
-                <div className="Proteins">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Expedita quo quidem facere praesentium, eius, soluta obcaecati
-                  pariatur ducimus quam quibusdam, quas nesciunt! Nisi, est
-                  suscipit adipisci in eos officiis repudiandae!
-                </div>
-                <div className="Carbs">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                  error est eius doloribus. Autem vel dolorum ab, soluta
-                  accusantium alias ullam veritatis, cupiditate perferendis modi
-                  corrupti harum quam sint eos.
-                </div>
-                <div className="Fats">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                  libero sed, error exercitationem, ex accusantium recusandae
-                  velit debitis vel delectus, laudantium temporibus consequatur
-                  quam repellendus enim accusamus unde quis eveniet!
-                </div>
-              </div>
+              <Nutrients infosModel={infosModel} />
             </section>
           </main>
         </div>

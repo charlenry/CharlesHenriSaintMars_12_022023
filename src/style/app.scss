@@ -38,7 +38,7 @@ body {
   gap: 0rem 0rem;
   grid-template-areas:
     "navbar navbar"
-    "menu-icons main";
+    "icons-bar main";
 }
 .navbar {
   grid-area: navbar;
@@ -47,8 +47,8 @@ body {
   background-color: $black;
   box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
-.menu-icons {
-  grid-area: menu-icons;
+.icons-bar {
+  grid-area: icons-bar;
   width: 12.7rem;
   height: auto;
   background-color: $black;
@@ -133,29 +133,37 @@ body {
   max-height: 26.3rem;
   overflow: hidden;
 }
-.Calories {
-  background-color:darkcyan;
+.calories {
+  background: $ligthGray;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
   border: 0.1rem solid darkcyan;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
 }
-.Proteins {
-  background-color:chartreuse;
+.proteins {
+  background: $ligthGray;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
   border: 0.1rem solid chartreuse;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
 }
-.Carbs {
-  background-color:chocolate;
+.carbs {
+  background: $ligthGray;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
   border: 0.1rem solid chocolate;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
 }
-.Fats {
-  background-color:darkviolet;
+.fats {
+  background: $ligthGray;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
   border: 0.1rem solid darkviolet;
   max-width: 25.8rem;
   max-height: 12.4rem;
