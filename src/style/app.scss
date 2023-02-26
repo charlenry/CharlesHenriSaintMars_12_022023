@@ -107,6 +107,8 @@ body {
 }
 .activity {
   // background-color: cyan;
+  // border: 0.1rem solid cyan;
+  border-radius: 5px;
   max-width: 83.5rem;
   max-height: 32rem;
   overflow: hidden;
@@ -114,6 +116,7 @@ body {
 .average {
   // background-color:blue;
   border: 0.1rem solid blue;
+  border-radius: 5px;
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
@@ -121,6 +124,7 @@ body {
 .performance {
   background-color:brown;
   border: 0.1rem solid brown;
+  border-radius: 5px;
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
@@ -128,6 +132,7 @@ body {
 .score {
   // background-color:burlywood;
   border: 0.1rem solid burlywood;
+  border-radius: 5px;
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;

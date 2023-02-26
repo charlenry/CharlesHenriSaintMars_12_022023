@@ -6,9 +6,7 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 
 const AverageSessions = ({averageSessionsModel}) => {

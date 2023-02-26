@@ -5,6 +5,7 @@
   background-color: $ligthGray;
 
   p {
+    position: absolute;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.4rem;
@@ -18,13 +19,13 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 7rem;
+    top: 6.5rem;
     left: 5.5rem;
     width: 14rem;
     height: 14rem;
     // border: 0.1rem solid blue;
     border-radius: 50%;
-    overflow: hidden;
+    // overflow: hidden;
 
     .line1 {
       font-size: 2.4rem;

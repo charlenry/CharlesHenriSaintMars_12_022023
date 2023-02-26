@@ -8,13 +8,10 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
-  Brush,
-  ReferenceLine,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 
 const BigActivity = (props) => {
@@ -31,7 +28,7 @@ const BigActivity = (props) => {
   return (
     <div className="Activity">
       <p>Durée moyenne des sessions</p>
-      <ResponsiveContainer width="100%" aspect={3}>
+      <ResponsiveContainer  aspect={3}>
         <BarChart
           width={702}
           height={145}

@@ -1,11 +1,8 @@
 import "./Activity.scss";
 import React from "react";
 import {
-  ResponsiveContainer,
   BarChart,
   Bar,
-  Brush,
-  ReferenceLine,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -19,8 +16,8 @@ const Activity = ({ activityModel }) => {
       <div className="activity">
         <p>Activité quotidienne</p>
         <BarChart
-          width={702}
-          height={145}
+          width={835}
+          height={190}
           data={activityModel.sessions}
           margin={{
             top: 5,
