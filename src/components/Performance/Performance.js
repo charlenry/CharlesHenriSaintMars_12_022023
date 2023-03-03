@@ -1,4 +1,4 @@
-import "./Performance.scss";
+import './Performance.scss';
 import React from "react";
 import {
   ResponsiveContainer,

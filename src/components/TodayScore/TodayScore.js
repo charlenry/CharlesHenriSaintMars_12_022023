@@ -24,6 +24,7 @@ const TodayScore = ({ infosModel }) => {
           cy={'50%'}
           innerRadius={80}
           outerRadius={90}
+          cornerRadius="50%"
           fill="#ff0000"
         />
       </PieChart>

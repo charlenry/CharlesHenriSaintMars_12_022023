@@ -29,14 +29,31 @@ const Activity = ({ activityModel }) => {
           <CartesianGrid horizontal="true" vertical="" />
           <XAxis dataKey="day" />
           <YAxis />
-          <Tooltip />
-          <Bar dataKey="kilogram" fill="#282D30" barSize={7} />
-          <Bar dataKey="calories" fill="#E60000" barSize={7} />
+          <Tooltip content={<CustomTooltip />} />
+          <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={[20, 20, 0, 0]} />
+          <Bar dataKey="calories" fill="#E60000" barSize={7} radius={[20, 20, 0, 0]}/>
           <Legend />
         </BarChart>
       </div>
     </div>
   );
+};
+
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    // console.log('Valeur de active: ', active);
+    // console.log('Valeur de payload: ', payload);
+    // console.log('Valeur de label: ', label);
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${payload[0].value}kg`}</p>
+        <p className="label">{`${payload[1].value}kcal`}</p>
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default Activity;
