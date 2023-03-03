@@ -7,7 +7,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0.1px dashed #868686;
+  // border: 0.1px dashed #868686;
 }
 @font-face {
   font-family: 'Roboto';
@@ -15,7 +15,7 @@
        url(../assets/fonts/Roboto/Roboto-Regular.ttf);
 }
 html {
-  font-size: 62.5%;
+  font-size: 62.5%;  /* min: 47% */
   font-family: Roboto, sans-serif;
 }
 body {
@@ -113,6 +113,7 @@ body {
   max-width: 83.5rem;
   max-height: 32rem;
   overflow: hidden;
+  flex: 1;
 }
 .average {
   // background-color:blue;
@@ -121,6 +122,7 @@ body {
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
+  flex: 1;
 }
 .performance {
   background-color:brown;
@@ -129,6 +131,7 @@ body {
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
+  flex: 1;
 }
 .score {
   // background-color:burlywood;
@@ -137,6 +140,7 @@ body {
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
+  flex: 1;
 }
 .calories {
   background: $ligthGray;
@@ -146,6 +150,7 @@ body {
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
+  flex: 1;
 }
 .proteins {
   background: $ligthGray;
@@ -155,6 +160,7 @@ body {
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
+  flex: 1;
 }
 .carbs {
   background: $ligthGray;
@@ -164,6 +170,7 @@ body {
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
+  flex: 1;
 }
 .fats {
   background: $ligthGray;
@@ -173,6 +180,7 @@ body {
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
+  flex: 1;
 }
 
 

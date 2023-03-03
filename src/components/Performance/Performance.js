@@ -12,7 +12,7 @@ import {
 const Performance = ({performanceModel}) => {
   return (
     <div className="performance">
-      <ResponsiveContainer minWidth={250}>
+      <ResponsiveContainer Width="100%" height="100%" >
         <RadarChart
           cx={"50%"}
           cy={"50%"}

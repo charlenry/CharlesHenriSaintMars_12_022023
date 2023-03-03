@@ -13,7 +13,7 @@ const AverageSessions = ({averageSessionsModel}) => {
   return (
     <div className="average">
       <p>Durée moyenne des sessions</p>
-      <ResponsiveContainer width={'100%'} height={240}>
+      <ResponsiveContainer width='100%' height='100%'>
         <LineChart          
           data={averageSessionsModel.sessions}
           // height={250}
