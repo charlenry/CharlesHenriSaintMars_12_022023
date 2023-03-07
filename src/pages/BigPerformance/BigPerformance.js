@@ -3,13 +3,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PerformanceModel from "../../dataModels/PerformanceModel";
 import useFetchService from "../../service/useFetchService";
+import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
   Radar,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
 } from "recharts";
 
 const BigPerformance = (props) => {
@@ -28,17 +28,19 @@ const BigPerformance = (props) => {
 
   return (
     <div className="Performance">
-      <ResponsiveContainer width="100%" aspect={3} >
-        <RadarChart
-          cx={"50%"}
-          cy={"50%"}
-          data={performanceModel.performanceData}
-        >
-          <PolarGrid />
-          <PolarAngleAxis dataKey="kind" />
-          <PolarRadiusAxis />
+      <ResponsiveContainer width="100%" aspect={3}>
+        <RadarChart outerRadius="58%" data={performanceModel.performanceData}>
+          <PolarGrid gridType="polygon" radialLines={false} />
+          <PolarAngleAxis
+            dataKey="kind"
+            tickLine={false}
+            tick={{
+              fill: "#fff",
+              fontSize: 30,
+              fontWeight: 500,
+            }}
+          />
           <Radar
-            name="Performance"
             dataKey="value"
             stroke="#FF0101"
             fill="#FF0101"
@@ -49,5 +51,9 @@ const BigPerformance = (props) => {
     </div>
   );
 };
+
+Performance.propTypes = {
+  performanceModel: PropTypes.object.isRequired
+}
 
 export default BigPerformance;
