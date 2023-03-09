@@ -46,7 +46,7 @@ body {
   width: 100%;
   height: 9.1rem;
   background-color: $black;
-  box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 .icons-bar {
   grid-area: icons-bar;
@@ -109,7 +109,7 @@ body {
 .activity {
   // background-color: cyan;
   // border: 0.1rem solid cyan;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   max-width: 83.5rem;
   max-height: 32rem;
   overflow: hidden;
@@ -118,7 +118,7 @@ body {
 .average {
   // background-color:blue;
   border: 0.1rem solid blue;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
@@ -127,7 +127,7 @@ body {
 .performance {
   background-color:brown;
   border: 0.1rem solid brown;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
@@ -136,7 +136,7 @@ body {
 .score {
   // background-color:burlywood;
   border: 0.1rem solid burlywood;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   max-width: 25.8rem;
   max-height: 26.3rem;
   overflow: hidden;
@@ -144,8 +144,8 @@ body {
 }
 .calories {
   background: $ligthGray;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
+  border-radius: 0.5rem;
   border: 0.1rem solid #FF0000;
   max-width: 25.8rem;
   max-height: 12.4rem;
@@ -154,8 +154,8 @@ body {
 }
 .proteins {
   background: $ligthGray;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
+  border-radius: 0.5rem;
   border: 0.1rem solid #4AB8FF;
   max-width: 25.8rem;
   max-height: 12.4rem;
@@ -164,8 +164,8 @@ body {
 }
 .carbs {
   background: $ligthGray;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
+  border-radius: 0.5rem;
   border: 0.1rem solid #FDCC0C;
   max-width: 25.8rem;
   max-height: 12.4rem;
@@ -174,8 +174,8 @@ body {
 }
 .fats {
   background: $ligthGray;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
+  border-radius: 0.5rem;
   border: 0.1rem solid #FD5181;
   max-width: 25.8rem;
   max-height: 12.4rem;
