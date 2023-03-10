@@ -81,7 +81,7 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop, activity
               radius={[20, 20, 0, 0]}
             />
             <Legend
-              wrapperStyle={{ top: activityLegendTop, left: activityLegendLeft, fontSize: activityFontSize, fontColor: '#000' }}
+              wrapperStyle={{ top: activityLegendTop, left: activityLegendLeft, fontSize: activityFontSize }}
               iconType="circle"
               iconSize={8}
               formatter={renderColorfulLegendText}

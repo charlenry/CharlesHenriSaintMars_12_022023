@@ -1,8 +1,9 @@
 
 .calories, .proteins, .carbs, .fats {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 3.2rem 0 3.2rem 3.2rem;
+  padding: 3.2rem 5rem 3.2rem 3.2rem;
 
   .text-container {
     margin-left: 2.4rem;
