@@ -12,11 +12,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const Activity = ({ activityModel, activityFontSize, activityLegendTop }) => {
+const Activity = ({ activityModel, activityFontSize, activityLegendTop, activityLegendLeft }) => {
   return (
     <div className="wrapper-activity">
       <div className="activity">
-        <p>Activité quotidienne</p>
+      <p>Activité quotidienne</p>
         <ResponsiveContainer width="100%" aspect={4}>
           <BarChart
             width={835}
@@ -81,7 +81,7 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop }) => {
               radius={[20, 20, 0, 0]}
             />
             <Legend
-              wrapperStyle={{ top: activityLegendTop, left: 260, fontSize: activityFontSize, fontColor: '#000' }}
+              wrapperStyle={{ top: activityLegendTop, left: activityLegendLeft, fontSize: activityFontSize, fontColor: '#000' }}
               iconType="circle"
               iconSize={8}
               formatter={renderColorfulLegendText}
@@ -111,8 +111,7 @@ const CustomTooltip = ({ active, payload }) => {
 
 
 const renderColorfulLegendText = (value, entry) => {
-  const { color } = entry;
-
+  // const { color } = entry;
   // console.log(value);
   // console.log(entry);
 
@@ -124,6 +123,7 @@ Activity.propTypes = {
   activityModel: PropTypes.object.isRequired,
   activityFontSize: PropTypes.number,
   activityLegendTop: PropTypes.number,
+  activityLegendLeft: PropTypes.number,
 };
 
 

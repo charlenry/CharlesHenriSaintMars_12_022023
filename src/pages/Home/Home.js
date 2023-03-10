@@ -45,7 +45,7 @@ const Home = (props) => {
   const [innerRadiusScore, setInnerRadiusScore] = useState();
   const [activityLegendTop, setActivityLegendTop] = useState();
   const [activityFontSize, setActivityFontSize] = useState();
-
+  const [activityLegendLeft, setActivityLegendLeft] = useState();
 
   useEffect(() => {
     if (browserWidth < 1440) {
@@ -53,10 +53,8 @@ const Home = (props) => {
     } else {
       setNavbarWidth(1440);
     }
-
     const html = document.querySelector("html");
     let actualFontPercent = coeffDirecteur * browserWidth;
-
     if (browserWidth < 1440) {
       html.style.fontSize = `${actualFontPercent}%`;
     } else if (browserWidth >= 1440) {
@@ -85,41 +83,57 @@ const Home = (props) => {
       setInnerRadiusScore(80);
       setOuterRadiusScore(90);
       setActivityLegendTop(-83);
+      setActivityLegendLeft(300);
     }
 
     if (browserWidth < 1180) {
-      setActivityFontSize(9);
+      setActivityFontSize(11);
       setActivityLegendTop(-60)
+      setActivityLegendLeft(245);
     } else if (browserWidth >= 1180 && browserWidth < 1280) {
       setActivityLegendTop(-70);
+      setActivityLegendLeft(260);
       setActivityFontSize(14);
     }
 
-  }, [browserWidth]);
-
+    if(browserWidth > 1440) {
+      setActivityLegendLeft(320);
+      setActivityFontSize(14);
+    }
+  }, [browserWidth, coeffDirecteur]);
 
   return (
     <>
-      <div className="center">
-        <div className="container">
-          <Navbar id={infosModel.id} navbarWidth={navbarWidth} />
-          <IconsBar />
-          <main className="main">
-            <Message infosModel={infosModel} />
+      <div className="container">
+        <Navbar id={infosModel.id} navbarWidth={navbarWidth} />
+        <IconsBar />
+        <main className="main">
+          <Message infosModel={infosModel} />
 
-            <section className="panorama">
-              <Activity activityModel={activityModel} activityLegendTop={activityLegendTop} activityFontSize={activityFontSize} />
+          <section className="panorama">
+            <Activity
+              activityModel={activityModel}
+              activityLegendTop={activityLegendTop}
+              activityLegendLeft={activityLegendLeft}
+              activityFontSize={activityFontSize}
+            />
 
-              <div className="wrapper-other-charts">
-                <AverageSessions averageSessionsModel={averageSessionsModel} />
-                <Performance performanceModel={performanceModel} outerRadiusPerformance={outerRadiusPerformance} />
-                <TodayScore infosModel={infosModel} innerRadiusScore={innerRadiusScore} outerRadiusScore={outerRadiusScore}  />
-              </div>
+            <div className="wrapper-other-charts">
+              <AverageSessions averageSessionsModel={averageSessionsModel} />
+              <Performance
+                performanceModel={performanceModel}
+                outerRadiusPerformance={outerRadiusPerformance}
+              />
+              <TodayScore
+                infosModel={infosModel}
+                innerRadiusScore={innerRadiusScore}
+                outerRadiusScore={outerRadiusScore}
+              />
+            </div>
 
-              <Nutrients infosModel={infosModel} />
-            </section>
-          </main>
-        </div>
+            <Nutrients infosModel={infosModel} />
+          </section>
+        </main>
       </div>
     </>
   );
