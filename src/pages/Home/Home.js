@@ -16,6 +16,7 @@ import TodayScore from "../../components/TodayScore/TodayScore";
 import Activity from "../../components/Activity/Activity";
 import AverageSessions from "../../components/AverageSessions/AverageSessions";
 import Performance from "../../components/Performance/Performance";
+// import PropTypes from "prop-types";
 
 const Home = (props) => {
   const { id } = useParams();
@@ -36,18 +37,22 @@ const Home = (props) => {
   const performance = useFetchService(id, "performance");
   const performanceModel = new PerformanceModel(performance.userPerformance);
 
-  // console.log("Valeur de userData: ", infosModel.lastName);
-
   const browserWidth = useBrowserWidth();
+  const coeffDirecteur = 47.5 / 1024;
   const [navbarWidth, setNavbarWidth] = useState();
-  const coeffDirecteur = (62.5 - 47.5) / (1440 - 1024);
+  const [outerRadiusPerformance, setOuterRadiusPerformance] = useState();
+  const [outerRadiusScore, setOuterRadiusScore] = useState();
+  const [innerRadiusScore, setInnerRadiusScore] = useState();
+  const [activityLegendTop, setActivityLegendTop] = useState();
+  const [activityFontSize, setActivityFontSize] = useState();
+
 
   useEffect(() => {
-    // if (browserWidth < 1457) {
-    //   setNavbarWidth(browserWidth - 20);
-    // } else {
-    //   setNavbarWidth(1440);
-    // }
+    if (browserWidth < 1440) {
+      setNavbarWidth(browserWidth - 5);
+    } else {
+      setNavbarWidth(1440);
+    }
 
     const html = document.querySelector("html");
     let actualFontPercent = coeffDirecteur * browserWidth;
@@ -56,6 +61,38 @@ const Home = (props) => {
       html.style.fontSize = `${actualFontPercent}%`;
     } else if (browserWidth >= 1440) {
       html.style.fontSize = "62.5%";
+    }
+
+    if (browserWidth < 1300) {
+      setOuterRadiusPerformance("40%");
+    } else if (browserWidth >= 1300) {
+      setOuterRadiusPerformance("60%");
+    }
+
+    if (browserWidth < 1280) {
+      setInnerRadiusScore(60);
+      setOuterRadiusScore(70);
+    } else if (browserWidth >= 1280) {
+      setInnerRadiusScore(80);
+      setOuterRadiusScore(90);
+    }
+
+    if (browserWidth < 1280) {
+      setInnerRadiusScore(60);
+      setOuterRadiusScore(70);
+      setActivityLegendTop(-70)
+    } else if (browserWidth >= 1280) {
+      setInnerRadiusScore(80);
+      setOuterRadiusScore(90);
+      setActivityLegendTop(-83);
+    }
+
+    if (browserWidth < 1180) {
+      setActivityFontSize(9);
+      setActivityLegendTop(-60)
+    } else if (browserWidth >= 1180 && browserWidth < 1280) {
+      setActivityLegendTop(-70);
+      setActivityFontSize(14);
     }
 
   }, [browserWidth]);
@@ -71,12 +108,12 @@ const Home = (props) => {
             <Message infosModel={infosModel} />
 
             <section className="panorama">
-              <Activity activityModel={activityModel} />
+              <Activity activityModel={activityModel} activityLegendTop={activityLegendTop} activityFontSize={activityFontSize} />
 
               <div className="wrapper-other-charts">
                 <AverageSessions averageSessionsModel={averageSessionsModel} />
-                <Performance performanceModel={performanceModel} />
-                <TodayScore infosModel={infosModel} />
+                <Performance performanceModel={performanceModel} outerRadiusPerformance={outerRadiusPerformance} />
+                <TodayScore infosModel={infosModel} innerRadiusScore={innerRadiusScore} outerRadiusScore={outerRadiusScore}  />
               </div>
 
               <Nutrients infosModel={infosModel} />

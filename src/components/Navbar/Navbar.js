@@ -1,6 +1,7 @@
 import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo }from "../../assets/icons/logo.svg";
+import PropTypes from "prop-types";
 
 const Navbar = ({ id, navbarWidth }) => {
   return (
@@ -12,6 +13,11 @@ const Navbar = ({ id, navbarWidth }) => {
       <NavLink to="">Communauté</NavLink>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  id: PropTypes.number,
+  navbarWidth: PropTypes.number,
 };
 
 export default Navbar;

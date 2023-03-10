@@ -63,7 +63,7 @@ body {
   grid-area: main;
   max-width: 112.6rem;
   height: 77.9rem;
-  border: 0.1rem solid $black;
+  // border: 0.1rem solid $black;
   position: absolute;
   margin-top: 15.9rem;
   margin-left: 22.4rem; 
@@ -117,7 +117,7 @@ body {
 }
 .average {
   // background-color:blue;
-  border: 0.1rem solid blue;
+  // border: 0.1rem solid blue;
   border-radius: 0.5rem;
   max-width: 25.8rem;
   max-height: 26.3rem;
@@ -126,7 +126,7 @@ body {
 }
 .performance {
   background-color:brown;
-  border: 0.1rem solid brown;
+  // border: 0.1rem solid brown;
   border-radius: 0.5rem;
   max-width: 25.8rem;
   max-height: 26.3rem;
@@ -135,7 +135,7 @@ body {
 }
 .score {
   // background-color:burlywood;
-  border: 0.1rem solid burlywood;
+  // border: 0.1rem solid burlywood;
   border-radius: 0.5rem;
   max-width: 25.8rem;
   max-height: 26.3rem;
@@ -146,7 +146,7 @@ body {
   background: $ligthGray;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
   border-radius: 0.5rem;
-  border: 0.1rem solid #FF0000;
+  // border: 0.1rem solid #FF0000;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
@@ -156,7 +156,7 @@ body {
   background: $ligthGray;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
   border-radius: 0.5rem;
-  border: 0.1rem solid #4AB8FF;
+  // border: 0.1rem solid #4AB8FF;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
@@ -166,7 +166,7 @@ body {
   background: $ligthGray;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
   border-radius: 0.5rem;
-  border: 0.1rem solid #FDCC0C;
+  // border: 0.1rem solid #FDCC0C;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;
@@ -176,7 +176,7 @@ body {
   background: $ligthGray;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0212249);
   border-radius: 0.5rem;
-  border: 0.1rem solid #FD5181;
+  // border: 0.1rem solid #FD5181;
   max-width: 25.8rem;
   max-height: 12.4rem;
   overflow: hidden;

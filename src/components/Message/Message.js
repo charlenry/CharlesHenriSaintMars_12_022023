@@ -1,4 +1,5 @@
 import "./Message.scss";
+import PropTypes from "prop-types";
 
 const Message = ({infosModel}) => {
   return (
@@ -7,6 +8,10 @@ const Message = ({infosModel}) => {
       <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </section>
   );
+};
+
+Message.propTypes = {
+  infosModel: PropTypes.object.isRequired,
 };
 
 export default Message;

@@ -10,14 +10,14 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 
-const Performance = ({ performanceModel }) => {
+const Performance = ({ performanceModel, outerRadiusPerformance }) => {
   return (
     <div className="performance">
       <ResponsiveContainer Width="100%" height="100%">
         <RadarChart
           cx="48%"
           cy="50%"
-          outerRadius="60%"
+          outerRadius={outerRadiusPerformance}
           data={performanceModel.performanceData}
         >
           <PolarGrid />
@@ -49,6 +49,7 @@ const Performance = ({ performanceModel }) => {
 
 Performance.propTypes = {
   performanceModel: PropTypes.object.isRequired,
+  outerRadiusPerformance: PropTypes.string,
 };
 
 export default Performance;

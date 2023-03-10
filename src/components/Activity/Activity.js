@@ -1,5 +1,6 @@
 import "./Activity.scss";
 import React from "react";
+import PropTypes from "prop-types";
 import {
   BarChart,
   Bar,
@@ -11,12 +12,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const Activity = ({ activityModel }) => {
+const Activity = ({ activityModel, activityFontSize, activityLegendTop }) => {
   return (
     <div className="wrapper-activity">
       <div className="activity">
         <p>Activité quotidienne</p>
-        <ResponsiveContainer width="100%" height={180}>
+        <ResponsiveContainer width="100%" aspect={4}>
           <BarChart
             width={835}
             height={190}
@@ -37,7 +38,7 @@ const Activity = ({ activityModel }) => {
               type="number"
               domain={["dataMin", "dataMax"]} 
               margin={{ left: 50 }}
-              tickMargin={16}
+              tickMargin={5}
               padding={{ left: 25, right: 25 }}
             />
             <YAxis
@@ -80,9 +81,10 @@ const Activity = ({ activityModel }) => {
               radius={[20, 20, 0, 0]}
             />
             <Legend
-              wrapperStyle={{ top: -83, left: 260, fontSize: 14 }}
+              wrapperStyle={{ top: activityLegendTop, left: 260, fontSize: activityFontSize, fontColor: '#000' }}
               iconType="circle"
               iconSize={8}
+              formatter={renderColorfulLegendText}
             />
           </BarChart>
         </ResponsiveContainer>
@@ -105,6 +107,29 @@ const CustomTooltip = ({ active, payload }) => {
   }
 
   return null;
+};
+
+
+const renderColorfulLegendText = (value, entry) => {
+  const { color } = entry;
+
+  // console.log(value);
+  // console.log(entry);
+
+  return <span style={{ color: '#000' }}>{value}</span>;
+};
+
+
+Activity.propTypes = {
+  activityModel: PropTypes.object.isRequired,
+  activityFontSize: PropTypes.number,
+  activityLegendTop: PropTypes.number,
+};
+
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 };
 
 

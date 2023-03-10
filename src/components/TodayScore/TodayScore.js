@@ -1,7 +1,8 @@
 import "./TodayScore.scss";
 import { PieChart, Pie, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
-const TodayScore = ({ infosModel }) => {
+const TodayScore = ({ infosModel, innerRadiusScore, outerRadiusScore }) => {
   return (
     <div className="score">
       <p>Score</p>
@@ -25,8 +26,8 @@ const TodayScore = ({ infosModel }) => {
             data={[infosModel.todayScore]}
             cx={"50%"}
             cy={"50%"}
-            innerRadius={80}
-            outerRadius={90}
+            innerRadius={innerRadiusScore}
+            outerRadius={outerRadiusScore}
             cornerRadius="50%"
             fill="#ff0000"
           />
@@ -34,6 +35,12 @@ const TodayScore = ({ infosModel }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+TodayScore.propTypes = {
+  infosModel: PropTypes.object.isRequired,
+  innerRadiusScore: PropTypes.number,
+  outerRadiusScore: PropTypes.number,
 };
 
 export default TodayScore;

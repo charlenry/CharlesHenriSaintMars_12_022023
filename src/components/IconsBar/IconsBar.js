@@ -3,6 +3,7 @@ import { ReactComponent as ZenIcon }from "../../assets/icons/zen-icon.svg";
 import { ReactComponent as SwimmingIcon }from "../../assets/icons/swimming-icon.svg";
 import { ReactComponent as CyclingIcon }from "../../assets/icons/cycling-icon.svg";
 import { ReactComponent as WeightliftingIcon }from "../../assets/icons/weightlifting-icon.svg";
+// import PropTypes from "prop-types";
 
 const IconsBar = (props) => {
   return (
@@ -13,7 +14,7 @@ const IconsBar = (props) => {
       <CyclingIcon />
       <WeightliftingIcon />
     </div>
-    <p>Copyright SportSee 2020</p>
+    <p>Copyright SportSee 2023</p>
   </aside>
   );
 };

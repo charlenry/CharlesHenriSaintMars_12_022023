@@ -1,5 +1,6 @@
 import "./AverageSessions.scss";
 import React from "react";
+import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
   LineChart,
@@ -71,8 +72,8 @@ const AverageSessions = ({ averageSessionsModel }) => {
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
-    // console.log('Valeur de active: ', active);
-    // console.log('Valeur de payload: ', payload);
+     console.log('Valeur de active: ', active);
+     console.log('Valeur de payload: ', payload);
     return (
       <div className="average-tooltip">
         <p className="average-tooltip__value">{`${payload[0].value} min`}</p>
@@ -81,6 +82,16 @@ const CustomTooltip = ({ active, payload }) => {
   }
 
   return null;
+};
+
+
+AverageSessions.propTypes = {
+  averageSessionsModel: PropTypes.object.isRequired,
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 };
 
 export default AverageSessions;

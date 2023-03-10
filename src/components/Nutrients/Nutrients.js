@@ -3,6 +3,7 @@ import { ReactComponent as CaloriesIcon } from "../../assets/icons/calories-icon
 import { ReactComponent as ProteinsIcon } from "../../assets/icons/proteins-icon.svg";
 import { ReactComponent as CarbsIcon } from "../../assets/icons/carbs-icon.svg";
 import { ReactComponent as FatsIcon } from "../../assets/icons/fats-icon.svg";
+import PropTypes from "prop-types";
 
 const Nutrients = ({ infosModel }) => {
   return (
@@ -37,6 +38,11 @@ const Nutrients = ({ infosModel }) => {
       </div>
     </div>
   );
+};
+
+
+Nutrients.propTypes = {
+  infosModel: PropTypes.object.isRequired,
 };
 
 export default Nutrients;
