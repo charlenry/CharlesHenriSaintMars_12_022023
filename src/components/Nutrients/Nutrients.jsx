@@ -11,35 +11,50 @@ const Nutrients = ({ infosModel }) => {
       <div className="calories">
         <CaloriesIcon />
         <div className="text-container">
-          <p className="value">{infosModel.calorieCount}kCal</p>
+          {infosModel.isLloading ? (
+            <p style={{ color: "#FF0000" }}>Loading...</p>
+          ) : (
+            <p className="value">{infosModel.calorieCount}kCal</p>
+          )}
           <p className="title">Calories</p>
         </div>
       </div>
       <div className="proteins">
         <ProteinsIcon />
         <div className="text-container">
-          <p className="value">{infosModel.proteinCount}g</p>
+          {infosModel.isLloading ? (
+            <p style={{ color: "#FF0000" }}>Loading...</p>
+          ) : (
+            <p className="value">{infosModel.proteinCount}g</p>
+          )}
           <p className="title">Protéines</p>
         </div>
       </div>
       <div className="carbs">
         <CarbsIcon />
         <div className="text-container">
-          <p className="value">{infosModel.carbohydrateCount}g</p>
+          {infosModel.isLloading ? (
+            <p style={{ color: "#FF0000" }}>Loading...</p>
+          ) : (
+            <p className="value">{infosModel.carbohydrateCount}g</p>
+          )}
           <p className="title">Glucides</p>
         </div>
       </div>
       <div className="fats">
         <FatsIcon />
         <div className="text-container">
-          <p className="value">{infosModel.lipidCount}g</p>
+          {infosModel.isLloading ? (
+            <p style={{ color: "#FF0000" }}>Loading...</p>
+          ) : (
+            <p className="value">{infosModel.lipidCount}g</p>
+          )}
           <p className="title">Lipides</p>
         </div>
       </div>
     </div>
   );
 };
-
 
 Nutrients.propTypes = {
   infosModel: PropTypes.object.isRequired,

@@ -1,3 +1,4 @@
+/* Design Pattern : Constructor Pattern */
 
 class ActivityModel {
   constructor(activity) {

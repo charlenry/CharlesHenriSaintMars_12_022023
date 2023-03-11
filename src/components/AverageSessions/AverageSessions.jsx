@@ -11,7 +11,19 @@ import {
 } from "recharts";
 
 const AverageSessions = ({ averageSessionsModel }) => {
-  return (
+  return averageSessionsModel.isLoading ? (
+    <p
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        color: "#FF0000",
+      }}
+    >
+      Loading...
+    </p>
+  ) : (
     <div className="average">
       <p>
         Durée moyenne des <br /> sessions
@@ -24,20 +36,22 @@ const AverageSessions = ({ averageSessionsModel }) => {
           margin={{
             top: 50,
             right: 15,
-            left: -50,
+            left: -45,
             bottom: 5,
           }}
           onMouseMove={(e) => {
             // console.log(e);
 
             if (e.isTooltipActive === true) {
-              let averageDiv = document.querySelector('.average');
+              let averageDiv = document.querySelector(".average");
               let averageDivWidth = averageDiv.clientWidth;
-              let coordinateXpercent = Math.round((e.activeCoordinate.x / averageDivWidth) * 100);
+              let coordinateXPercent = Math.round(
+                (e.activeCoordinate.x / averageDivWidth) * 100
+              );
               averageDiv.style.backgroundImage = `linear-gradient(
                 to right, 
-                #ff0000 ${coordinateXpercent}%, 
-                #d60000 ${coordinateXpercent}%
+                #ff0000 ${coordinateXPercent}%, 
+                #d60000 ${coordinateXPercent}%
               )`;
             }
           }}
@@ -46,7 +60,7 @@ const AverageSessions = ({ averageSessionsModel }) => {
             dataKey="day"
             axisLine={false}
             tickLine={false}
-            tick={{ stroke: "white" }}
+            tick={{ stroke: "#FFB0B0", strokeWidth: 1 }}
           />
           <YAxis
             dataKey="sessionLength"
@@ -62,7 +76,13 @@ const AverageSessions = ({ averageSessionsModel }) => {
             type="monotone"
             dataKey="sessionLength"
             dot={false}
-            stroke="#fff"
+            activeDot={{
+              stroke: "rgba(255, 255, 255, 0.3)",
+              strokeWidth: 10,
+              r: 5,
+            }}
+            stroke="#FFF"
+            strokeWidth={1.2}
           />
         </LineChart>
       </ResponsiveContainer>
@@ -72,8 +92,8 @@ const AverageSessions = ({ averageSessionsModel }) => {
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
-     console.log('Valeur de active: ', active);
-     console.log('Valeur de payload: ', payload);
+    // console.log("Valeur de active: ", active);
+    // console.log("Valeur de payload: ", payload);
     return (
       <div className="average-tooltip">
         <p className="average-tooltip__value">{`${payload[0].value} min`}</p>
@@ -83,7 +103,6 @@ const CustomTooltip = ({ active, payload }) => {
 
   return null;
 };
-
 
 AverageSessions.propTypes = {
   averageSessionsModel: PropTypes.object.isRequired,

@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
+const {
+  getUserById,
+  getUserActivityById,
+  getUserAverageSession,
+  getUserPerformance
+} = require('../mocked_data/getLocalData');
 
-const useFetch = (url, serviceName) => {
+function useFetch(url, serviceName) {
   // const [data, setData] = useState([]);
   const [userId, setUserId] = useState();
   const [sessions, setSessions] = useState([]);
@@ -14,7 +20,8 @@ const useFetch = (url, serviceName) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (!url) return;
+    if (!url)
+      return;
     setIsLoading(true);
 
     async function fetchData() {
@@ -29,7 +36,7 @@ const useFetch = (url, serviceName) => {
           // setData(result.data);
           setUserId(result.data.id);
           setUserInfos(result.data.userInfos);
-          setTodayScore(result.data.todayScore)
+          setTodayScore(result.data.todayScore);
           setKeyData(result.data.keyData);
         } else if (serviceName === "activity") {
           setUserId(result.data.userId);
@@ -55,23 +62,22 @@ const useFetch = (url, serviceName) => {
   }, [url, serviceName]);
 
   // console.log('Valeur de data from usefetch: ', data);
-
   if (serviceName === "mainInfo") {
-    return {userId, userInfos, todayScore, keyData, hasError, errorType, isLoading};
+    return { userId, userInfos, todayScore, keyData, hasError, errorType, isLoading };
   }
 
   if (serviceName === "activity") {
-    return {userId, sessions, hasError, errorType, isLoading};
+    return { userId, sessions, hasError, errorType, isLoading };
   }
 
   if (serviceName === "averageSessions") {
-    return {userId, sessions, hasError, errorType, isLoading};
+    return { userId, sessions, hasError, errorType, isLoading };
   }
 
   if (serviceName === "performance") {
-    return {userId, kind, perfData, hasError, errorType, isLoading};
+    return { userId, kind, perfData, hasError, errorType, isLoading };
   }
-  
+
 }
 
 

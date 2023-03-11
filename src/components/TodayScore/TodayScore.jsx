@@ -3,7 +3,19 @@ import { PieChart, Pie, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
 const TodayScore = ({ infosModel, innerRadiusScore, outerRadiusScore }) => {
-  return (
+  return infosModel.isLoading ? (
+    <p
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        color: "#FF0000",
+      }}
+    >
+      Loading...
+    </p>
+  ) : (
     <div className="score">
       <p>Score</p>
       <div className="label-score">

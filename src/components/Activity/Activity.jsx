@@ -13,10 +13,22 @@ import {
 } from "recharts";
 
 const Activity = ({ activityModel, activityFontSize, activityLegendTop, activityLegendLeft }) => {
-  return (
+  return activityModel.isLoading ? (
+    <p
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        color: "#FF0000",
+      }}
+    >
+      Loading...
+    </p>
+  ) : (
     <div className="wrapper-activity">
       <div className="activity">
-      <p>Activité quotidienne</p>
+        <p>Activité quotidienne</p>
         <ResponsiveContainer width="100%" aspect={4}>
           <BarChart
             width={835}
@@ -26,7 +38,7 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop, activity
             barGap={7}
           >
             <CartesianGrid
-              horizontal="true" 
+              horizontal="true"
               vertical={false}
               strokeDasharray="4"
             />
@@ -36,7 +48,7 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop, activity
               tickCount={7}
               axisLine={true}
               type="number"
-              domain={["dataMin", "dataMax"]} 
+              domain={["dataMin", "dataMax"]}
               margin={{ left: 50 }}
               tickMargin={5}
               padding={{ left: 25, right: 25 }}
@@ -81,7 +93,11 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop, activity
               radius={[20, 20, 0, 0]}
             />
             <Legend
-              wrapperStyle={{ top: activityLegendTop, left: activityLegendLeft, fontSize: activityFontSize }}
+              wrapperStyle={{
+                top: activityLegendTop,
+                left: activityLegendLeft,
+                fontSize: activityFontSize,
+              }}
               iconType="circle"
               iconSize={8}
               formatter={renderColorfulLegendText}
@@ -92,7 +108,6 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop, activity
     </div>
   );
 };
-
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -109,15 +124,13 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-
 const renderColorfulLegendText = (value, entry) => {
   // const { color } = entry;
   // console.log(value);
   // console.log(entry);
 
-  return <span style={{ color: '#000' }}>{value}</span>;
+  return <span style={{ color: "#000" }}>{value}</span>;
 };
-
 
 Activity.propTypes = {
   activityModel: PropTypes.object.isRequired,
@@ -126,11 +139,9 @@ Activity.propTypes = {
   activityLegendLeft: PropTypes.number,
 };
 
-
 CustomTooltip.propTypes = {
   active: PropTypes.bool,
   payload: PropTypes.array,
 };
-
 
 export default Activity;

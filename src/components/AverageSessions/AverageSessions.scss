@@ -8,11 +8,12 @@
   border-radius: 0.5rem;
   color: $black;
   font-weight: 500;
+  position: relative;
 
   > p {
     position: absolute;
     font-size: 1.5rem;
-    color: #FF8080;
+    color: #FFB0B0;
     margin-left: 4rem;
     margin-top: 2rem;
   }

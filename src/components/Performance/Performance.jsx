@@ -11,7 +11,19 @@ import {
 } from "recharts";
 
 const Performance = ({ performanceModel, outerRadiusPerformance }) => {
-  return (
+  return performanceModel.isLoading ? (
+    <p
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        color: '#FF0000'
+      }}
+    >
+      Loading...
+    </p>
+  ) : (
     <div className="performance">
       <ResponsiveContainer Width="100%" height="100%">
         <RadarChart
