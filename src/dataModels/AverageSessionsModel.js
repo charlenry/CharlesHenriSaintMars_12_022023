@@ -7,6 +7,7 @@ class AverageSessionsModel {
     this._hasError = averageSessions.hasError;
     this._errorType = averageSessions.errorType;
     this._isLoading = averageSessions.isLoading;
+    this._isMockedData = averageSessions.isMockedData;
   }
 
   get userId() {
@@ -44,6 +45,10 @@ class AverageSessionsModel {
 
   get isLoading() {
     return this._isLoading;
+  }
+
+  get isMockedData() {
+    return this._isMockedData;
   }
 
 }

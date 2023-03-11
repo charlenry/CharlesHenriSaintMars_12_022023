@@ -9,6 +9,7 @@ class UserInfosModel {
     this._hasError = userData.hasError;
     this._errorType = userData.errorType;
     this._isLoading = userData.isLoading;
+    this._isMockedData = userData.isMockedData;
   }
 
   get id() {
@@ -109,6 +110,10 @@ class UserInfosModel {
 
   get isLoading() {
     return this._isLoading;
+  }
+
+  get isMockedData() {
+    return this._isMockedData;
   }
 
 }

@@ -8,6 +8,7 @@ class PerformanceModel {
     this._hasError = performance.hasError;
     this._errorType = performance.errorType;
     this._isLoading = performance.isLoading;
+    this._isMockedData = performance.isMockedData;
   }
 
   get userId() {
@@ -53,6 +54,10 @@ class PerformanceModel {
 
   get isLoading() {
     return this._isLoading;
+  }
+
+  get isMockedData() {
+    return this._isMockedData;
   }
 
 }

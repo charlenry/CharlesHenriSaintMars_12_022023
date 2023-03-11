@@ -7,6 +7,7 @@ class ActivityModel {
     this._hasError = activity.hasError;
     this._errorType = activity.errorType;
     this._isLoading = activity.isLoading;
+    this._isMockedData = activity.isMockedData;
   }
 
   get userId() {
@@ -32,6 +33,10 @@ class ActivityModel {
 
   get isLoading() {
     return this._isLoading;
+  }
+
+  get isMockedData() {
+    return this._isMockedData;
   }
 
 }

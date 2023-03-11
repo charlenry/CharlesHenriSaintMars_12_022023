@@ -33,7 +33,7 @@ const getUserAverageSession = id => USER_AVERAGE_SESSIONS
 const getUserPerformance = id => USER_PERFORMANCE
     .filter(userPerformance => userPerformance.userId === id)
 
-export default {
+export {
     getUserById,
     getUserActivityById,
     getUserAverageSession,

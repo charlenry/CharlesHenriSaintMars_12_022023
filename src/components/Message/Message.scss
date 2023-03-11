@@ -1,5 +1,7 @@
 
 .message {
+  position: relative;
+
   h1 {
     font-size: 4.8rem;
     font-weight: 500;
@@ -12,5 +14,13 @@
   p {
     font-size: 1.8rem;
     font-weight: 500;
+  }
+
+  .dataSource {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #FF0000;
+    transition: color 15s;
   }
 }

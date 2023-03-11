@@ -47,6 +47,7 @@ const Home = (props) => {
   const [activityFontSize, setActivityFontSize] = useState();
   const [activityLegendLeft, setActivityLegendLeft] = useState();
 
+
   useEffect(() => {
     if (browserWidth < 1440) {
       setNavbarWidth(browserWidth - 5);
@@ -78,7 +79,7 @@ const Home = (props) => {
     if (browserWidth < 1280) {
       setInnerRadiusScore(60);
       setOuterRadiusScore(70);
-      setActivityLegendTop(-70)
+      setActivityLegendTop(-70);
     } else if (browserWidth >= 1280) {
       setInnerRadiusScore(80);
       setOuterRadiusScore(90);
@@ -88,7 +89,7 @@ const Home = (props) => {
 
     if (browserWidth < 1180) {
       setActivityFontSize(11);
-      setActivityLegendTop(-60)
+      setActivityLegendTop(-60);
       setActivityLegendLeft(245);
     } else if (browserWidth >= 1180 && browserWidth < 1280) {
       setActivityLegendTop(-70);
@@ -96,11 +97,19 @@ const Home = (props) => {
       setActivityFontSize(14);
     }
 
-    if(browserWidth > 1440) {
+    if (browserWidth > 1440) {
       setActivityLegendLeft(320);
       setActivityFontSize(14);
     }
-  }, [browserWidth, coeffDirecteur]);
+
+    const dataSource = document.querySelector(".dataSource");
+    if (infosModel.isMockedData) {
+      dataSource.style.display = "block";
+    } else {
+      dataSource.style.display = "none";
+    }
+
+  }, [browserWidth, coeffDirecteur, infosModel.isMockedData]);
 
   return (
     <>
@@ -108,31 +117,53 @@ const Home = (props) => {
         <Navbar id={infosModel.id} navbarWidth={navbarWidth} />
         <IconsBar />
         <main className="main">
-          <Message infosModel={infosModel} />
+          {infosModel.hasError ||
+          activityModel.hasError ||
+          averageSessionsModel.hasError ||
+          performanceModel.hasError ? (
+            <p
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                color: "#FF0000",
+                fontSize: 26
+              }}
+            >
+              An error has occurred: check the console.
+            </p>
+          ) : (
+            <>
+              <Message infosModel={infosModel} />
 
-          <section className="panorama">
-            <Activity
-              activityModel={activityModel}
-              activityLegendTop={activityLegendTop}
-              activityLegendLeft={activityLegendLeft}
-              activityFontSize={activityFontSize}
-            />
+              <section className="panorama">
+                <Activity
+                  activityModel={activityModel}
+                  activityLegendTop={activityLegendTop}
+                  activityLegendLeft={activityLegendLeft}
+                  activityFontSize={activityFontSize}
+                />
 
-            <div className="wrapper-other-charts">
-              <AverageSessions averageSessionsModel={averageSessionsModel} />
-              <Performance
-                performanceModel={performanceModel}
-                outerRadiusPerformance={outerRadiusPerformance}
-              />
-              <TodayScore
-                infosModel={infosModel}
-                innerRadiusScore={innerRadiusScore}
-                outerRadiusScore={outerRadiusScore}
-              />
-            </div>
+                <div className="wrapper-other-charts">
+                  <AverageSessions
+                    averageSessionsModel={averageSessionsModel}
+                  />
+                  <Performance
+                    performanceModel={performanceModel}
+                    outerRadiusPerformance={outerRadiusPerformance}
+                  />
+                  <TodayScore
+                    infosModel={infosModel}
+                    innerRadiusScore={innerRadiusScore}
+                    outerRadiusScore={outerRadiusScore}
+                  />
+                </div>
 
-            <Nutrients infosModel={infosModel} />
-          </section>
+                <Nutrients infosModel={infosModel} />
+              </section>
+            </>
+          )}
         </main>
       </div>
     </>
