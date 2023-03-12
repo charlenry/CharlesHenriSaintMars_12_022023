@@ -103,11 +103,7 @@ const Home = (props) => {
     }
 
     const dataSource = document.querySelector(".dataSource");
-    if (infosModel.isMockedData) {
-      dataSource.style.display = "block";
-    } else {
-      dataSource.style.display = "none";
-    }
+    dataSource.style.color = "#FFF";
 
   }, [browserWidth, coeffDirecteur, infosModel.isMockedData]);
 
