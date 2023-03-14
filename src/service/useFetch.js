@@ -21,7 +21,6 @@ function useFetch(url, id, serviceName) {
   const [isMockedData, setIsMockedData] = useState(false);
   const uid = Number(id);
 
-  // console.log('Valeur de id: ', Number(usrId));
 
   useEffect(() => {
     if (!url)

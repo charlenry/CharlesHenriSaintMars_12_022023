@@ -34,7 +34,7 @@ const Home = (props) => {
   return (
     <>
       <div className="container">
-        <Navbar id={-1} navbarWidth={navbarWidth} />
+        <Navbar id={12} navbarWidth={navbarWidth} />
         <IconsBar />
         <main className="main">
           <div className="home-content">

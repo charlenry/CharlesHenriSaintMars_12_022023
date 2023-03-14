@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CharlesHenriSaintMars_12_022023/build/static/css/main.188dc299.css",
-    "main.js": "/CharlesHenriSaintMars_12_022023/build/static/js/main.72e531d5.js",
+    "main.js": "/CharlesHenriSaintMars_12_022023/build/static/js/main.de432378.js",
     "static/media/Roboto-Regular.ttf": "/CharlesHenriSaintMars_12_022023/build/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/logo.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/logo.4eca3b10ad22946ef0082cc7cc4fe984.svg",
     "static/media/swimming-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/swimming-icon.055e14cd8bea6b061547e3cbef3de016.svg",
@@ -14,10 +14,10 @@
     "static/media/calories-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/calories-icon.5db5a3aff9bd8f441f49792782c8262e.svg",
     "static/media/weightlifting-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/weightlifting-icon.4fe7fb9fe3554121b3d42dcb489eefd0.svg",
     "main.188dc299.css.map": "/CharlesHenriSaintMars_12_022023/build/static/css/main.188dc299.css.map",
-    "main.72e531d5.js.map": "/CharlesHenriSaintMars_12_022023/build/static/js/main.72e531d5.js.map"
+    "main.de432378.js.map": "/CharlesHenriSaintMars_12_022023/build/static/js/main.de432378.js.map"
   },
   "entrypoints": [
     "static/css/main.188dc299.css",
-    "static/js/main.72e531d5.js"
+    "static/js/main.de432378.js"
   ]
 }

@@ -32,9 +32,7 @@ const Dashboard = (props) => {
   const activityModel = new ActivityModel(activity.userActivity);
 
   const averageSessions = useFetchService(uid, "averageSessions");
-  const averageSessionsModel = new AverageSessionsModel(
-    averageSessions.userAverageSessions
-  );
+  const averageSessionsModel = new AverageSessionsModel(averageSessions.userAverageSessions);
 
   const performance = useFetchService(uid, "performance");
   const performanceModel = new PerformanceModel(performance.userPerformance);

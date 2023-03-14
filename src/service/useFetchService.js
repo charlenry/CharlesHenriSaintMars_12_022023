@@ -1,6 +1,6 @@
-import useFetch from "./useFetch";
+import useFetch from "./useFetchMock";
 
-const BASE_URL = "http://localhost:3000/CharlesHenriSaintMars_12_022023/build";
+const BASE_URL = "http://localhost:3000";
 
 const useFetchService = (id, serviceName) => {
   const userData = useFetch(`${BASE_URL}/user/${id}`, id, serviceName);
