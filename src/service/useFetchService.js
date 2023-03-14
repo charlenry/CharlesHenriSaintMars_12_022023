@@ -1,4 +1,4 @@
-import useFetch from "./useFetchMock";
+import useFetch from "./useFetch";
 
 const BASE_URL = "http://localhost:3000";
 
