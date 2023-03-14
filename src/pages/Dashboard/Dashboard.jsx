@@ -21,21 +21,22 @@ import Performance from "../../components/Performance/Performance";
 
 const Dashboard = (props) => {
   const { id } = useParams();
+  const uid = Number(id);
 
   /* Service retoune sous forme d'objet toutes les données de l'utilisateur à partir de son ID */
 
-  const mainInfo = useFetchService(id, "mainInfo");
+  const mainInfo = useFetchService(uid, "mainInfo");
   const infosModel = new UserInfosModel(mainInfo.userData);
 
-  const activity = useFetchService(id, "activity");
+  const activity = useFetchService(uid, "activity");
   const activityModel = new ActivityModel(activity.userActivity);
 
-  const averageSessions = useFetchService(id, "averageSessions");
+  const averageSessions = useFetchService(uid, "averageSessions");
   const averageSessionsModel = new AverageSessionsModel(
     averageSessions.userAverageSessions
   );
 
-  const performance = useFetchService(id, "performance");
+  const performance = useFetchService(uid, "performance");
   const performanceModel = new PerformanceModel(performance.userPerformance);
 
   const browserWidth = useBrowserWidth();

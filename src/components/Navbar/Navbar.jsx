@@ -4,6 +4,7 @@ import { ReactComponent as Logo }from "../../assets/icons/logo.svg";
 import PropTypes from "prop-types";
 
 const Navbar = ({ id, navbarWidth }) => {
+  
   return (
     <nav className="navbar" style={{ width: `${navbarWidth}px` }}>
       <NavLink to="/"><Logo className="logo" /></NavLink>

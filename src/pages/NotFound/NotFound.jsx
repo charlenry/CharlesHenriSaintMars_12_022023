@@ -10,6 +10,7 @@ import IconsBar from "../../components/IconsBar/IconsBar";
 
 const NotFound = (props) => {
   const { id } = useParams();
+  const uid = Number(id);
 
   const browserWidth = useBrowserWidth();
   const coeffDirecteur = 47.5 / 1024;
@@ -33,7 +34,7 @@ const NotFound = (props) => {
   return (
     <>
       <div className="container">
-        <Navbar id={id} navbarWidth={navbarWidth} />
+        <Navbar id={uid} navbarWidth={navbarWidth} />
         <IconsBar />
         <main className="main">
           <div className="notfound-content">

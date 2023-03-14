@@ -7,7 +7,7 @@ import useBrowserWidth from "../../service/useBrowserWidth";
 import Navbar from "../../components/Navbar/Navbar";
 import IconsBar from "../../components/IconsBar/IconsBar";
 
-// import PropTypes from "prop-types";
+// import PropTypes' from "prop-types";
 
 const Home = (props) => {
   // const { id } = useParams();
@@ -34,7 +34,7 @@ const Home = (props) => {
   return (
     <>
       <div className="container">
-        <Navbar id="" navbarWidth={navbarWidth} />
+        <Navbar id={-1} navbarWidth={navbarWidth} />
         <IconsBar />
         <main className="main">
           <div className="home-content">

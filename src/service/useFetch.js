@@ -38,21 +38,21 @@ function useFetch(url, id, serviceName) {
           console.log("Error : This user does not exist.");
         } else if (serviceName === "mainInfo") {
           // setData(result.data);
-          setUserId(result.data.id);
+          setUserId(Number(result.data.id));
           setUserInfos(result.data.userInfos);
           setTodayScore(result.data.todayScore);
           setKeyData(result.data.keyData);
           setIsMockedData(false);
         } else if (serviceName === "activity") {
-          setUserId(result.data.userId);
+          setUserId(Number(result.data.userId));
           setSessions(result.data.sessions);
           setIsMockedData(false);
         } else if (serviceName === "averageSessions") {
-          setUserId(result.data.userId);
+          setUserId(Number(result.data.userId));
           setSessions(result.data.sessions);
           setIsMockedData(false);
         } else if (serviceName === "performance") {
-          setUserId(result.data.userId);
+          setUserId(Number(result.data.userId));
           setKind(result.data.kind);
           setPerfData(result.data.data);
           setIsMockedData(false);
@@ -62,7 +62,7 @@ function useFetch(url, id, serviceName) {
           if (getUserById(uid).length === 0) {
             setError("Error : No user data is available");
           } else {
-            setUserId(getUserById(uid)[0].id);
+            setUserId(Number(getUserById(uid)[0].id));
             setUserInfos(getUserById(uid)[0].userInfos);
             setTodayScore(getUserById(uid)[0].todayScore);
             setKeyData(getUserById(uid)[0].keyData);
@@ -72,7 +72,7 @@ function useFetch(url, id, serviceName) {
           if (getUserActivityById(uid).length === 0) {
             setError("Error : No user data is available for activity");
           } else {
-            setUserId(getUserActivityById(uid)[0].userId);
+            setUserId(Number(getUserActivityById(uid)[0].userId));
             setSessions(getUserActivityById(uid)[0].sessions);
             setIsMockedData(true);
           }
@@ -80,7 +80,7 @@ function useFetch(url, id, serviceName) {
           if (getUserAverageSession(uid).length === 0) {
             setError("Error : No user data is available for average sessions");
           } else {
-            setUserId(getUserAverageSession(uid)[0].userId);
+            setUserId(Number(getUserAverageSession(uid)[0].userId));
             setSessions(getUserAverageSession(uid)[0].sessions);
             setIsMockedData(true);
           }
@@ -88,7 +88,7 @@ function useFetch(url, id, serviceName) {
           if (getUserPerformance(uid).length === 0) {
             setError("Error : No user data is available for performance");
           } else {
-            setUserId(getUserPerformance(uid)[0].userId);
+            setUserId(Number(getUserPerformance(uid)[0].userId));
             setKind(getUserPerformance(uid)[0].kind);
             setPerfData(getUserPerformance(uid)[0].data);
             setIsMockedData(true);
