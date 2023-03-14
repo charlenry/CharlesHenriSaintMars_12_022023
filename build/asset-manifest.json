@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/CharlesHenriSaintMars_12_022023/build/static/css/main.7ff67eb1.css",
+    "main.js": "/CharlesHenriSaintMars_12_022023/build/static/js/main.2c01c117.js",
+    "static/media/Roboto-Regular.ttf": "/CharlesHenriSaintMars_12_022023/build/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/logo.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/logo.4eca3b10ad22946ef0082cc7cc4fe984.svg",
+    "static/media/swimming-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/swimming-icon.055e14cd8bea6b061547e3cbef3de016.svg",
+    "static/media/cycling-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/cycling-icon.d516c0e89dbb3aaab23afac6a130ca06.svg",
+    "static/media/carbs-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/carbs-icon.c0d2688f9814c841b5cedb67a962822b.svg",
+    "index.html": "/CharlesHenriSaintMars_12_022023/build/index.html",
+    "static/media/fats-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/fats-icon.82c6cb9fd2b3e6307fca82c2f796ed14.svg",
+    "static/media/proteins-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/proteins-icon.2154360fa2aaf0364a312b2c0c6c7ca0.svg",
+    "static/media/zen-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/zen-icon.6c31a2775a609d06fd5d99eb347250ed.svg",
+    "static/media/calories-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/calories-icon.5db5a3aff9bd8f441f49792782c8262e.svg",
+    "static/media/weightlifting-icon.svg": "/CharlesHenriSaintMars_12_022023/build/static/media/weightlifting-icon.4fe7fb9fe3554121b3d42dcb489eefd0.svg",
+    "main.7ff67eb1.css.map": "/CharlesHenriSaintMars_12_022023/build/static/css/main.7ff67eb1.css.map",
+    "main.2c01c117.js.map": "/CharlesHenriSaintMars_12_022023/build/static/js/main.2c01c117.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ff67eb1.css",
+    "static/js/main.2c01c117.js"
+  ]
+}
