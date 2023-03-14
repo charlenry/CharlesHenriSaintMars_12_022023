@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 const Navbar = ({ id, navbarWidth }) => {
   return (
     <nav className="navbar" style={{ width: `${navbarWidth}px` }}>
-      <Logo className="logo" />
-      <NavLink to={`/user/${id}`}>Accueil</NavLink>
-      <NavLink to="">Profil</NavLink>
-      <NavLink to="">Réglage</NavLink>
-      <NavLink to="">Communauté</NavLink>
+      <NavLink to="/"><Logo className="logo" /></NavLink>
+      <NavLink to="/">Accueil</NavLink>
+      <NavLink to={`/user/${id}`}>Profil</NavLink>
+      <NavLink to={`/user/${id}/settings`}>Réglage</NavLink>
+      <NavLink to={`/user/${id}/community`}>Communauté</NavLink>
     </nav>
   );
 };

@@ -1,0 +1,29 @@
+@import '../../style/variables.scss';
+
+.userLink {
+  display: block;
+  padding: 1rem;
+  border: 0.2rem solid red;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+  width: 46%;
+  font-size: 2.4rem;
+  color: $black;
+  text-decoration: none;
+  transition: all 0.7s;
+  text-align: center;
+
+  &:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
