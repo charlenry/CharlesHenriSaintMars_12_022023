@@ -2,6 +2,7 @@ import "./Dashboard.scss";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useBrowserWidth from "../../service/useBrowserWidth";
 import useFetchService from "../../service/useFetchService";
 import UserInfosModel from "../../dataModels/UserInfosModel";
@@ -127,7 +128,8 @@ const Dashboard = (props) => {
                 fontSize: 26
               }}
             >
-              An error has occurred: check the console.
+              An error has occurred: check the console, <br /><br />
+              <Link className="error-link" to="/">or go to the home page and choose a user.</Link>
             </p>
           ) : (
             <>
