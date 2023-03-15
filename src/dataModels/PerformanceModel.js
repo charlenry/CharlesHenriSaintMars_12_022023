@@ -1,6 +1,7 @@
 /**
  * Creating a class called PerformanceModel.
  * Based on a Design Pattern : Constructor Pattern.
+ * It allows to format the data of performance usable by the components.
  * 
  * @class
  * @name PerformanceModel
@@ -25,15 +26,42 @@ class PerformanceModel {
     this._isMockedData = performance.isMockedData;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) userId
+   * @kind property
+   * @memberof PerformanceModel
+   * @returns {number} userId
+   */
   get userId() {
     return this._userId;
   }
 
-  /* Capitalize the first letter of a string. */
+  /**
+   * It's a method that capitalize the first letter of a string.
+   * 
+   * @method
+   * @name upperCaseFirstChar
+   * @kind method
+   * @memberof PerformanceModel
+   * @param {string} str
+   * @returns {string}
+   */
   upperCaseFirstChar(str) {
     return (str+'').charAt(0).toUpperCase()+str.substr(1);
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) performanceData
+   * @kind property
+   * @memberof PerformanceModel
+   * @returns {array} performanceData
+   */
   get performanceData() {
     
     const kindFr = {
@@ -58,18 +86,54 @@ class PerformanceModel {
     return newPerformanceData;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) hasError
+   * @kind property
+   * @memberof PerformanceModel
+   * @returns {boolean} hasError
+   */
   get hasError() {
     return this._hasError;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) errorType
+   * @kind property
+   * @memberof PerformanceModel
+   * @returns {string} errorType
+   */
   get errorType() {
     return this._errorType;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) isLoading
+   * @kind property
+   * @memberof PerformanceModel
+   * @returns {boolean} isLoading
+   */
   get isLoading() {
     return this._isLoading;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) isMockedData
+   * @kind property
+   * @memberof PerformanceModel
+   * @returns {boolean} isMockedData
+   */
   get isMockedData() {
     return this._isMockedData;
   }

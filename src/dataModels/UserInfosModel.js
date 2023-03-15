@@ -3,6 +3,7 @@
 /**
  * Creating a class called UserInfosModel.
  * Based on a Design Pattern : Constructor Pattern.
+ * It allows to format the data of the user's information usable by the components.
  * 
  * @class
  * @name UserInfosModel
@@ -28,18 +29,42 @@ class UserInfosModel {
     this._isMockedData = userData.isMockedData;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) id
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {number} id
+   */
   get id() {
-    /* Retourne un nombre */
     return this._id;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) todayScore
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {{ todayScore: number; }}  - A number in percentage
+   */
   get todayScore() {
-    /* Retourne un nombre en pourcentage */
     return {todayScore: this._todayScore * 100};
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) firstName
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {string} firstName
+   */
   get firstName() {
-    /* Retourne une chaîne */
     let firstName;
   
     for (let key in this._userInfos) {
@@ -49,8 +74,16 @@ class UserInfosModel {
     return firstName;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) lastName
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {string} lastName
+   */
   get lastName() {
-    /* Retourne un chaîne */
     let lastName;
 
     for (let key in this._userInfos) {
@@ -60,8 +93,16 @@ class UserInfosModel {
     return lastName;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) age
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {number} age
+   */
   get age() {
-    /* Retourne un nombre */
     let age;
 
     for (let key in this._userInfos) {
@@ -71,8 +112,16 @@ class UserInfosModel {
     return age;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) calorieCount
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {number} calorieCount
+   */
   get calorieCount() {
-    /* Retourne un nombre */
     let caloriesCount;
 
     for (let key in this._keyData) {
@@ -83,8 +132,16 @@ class UserInfosModel {
 
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) proteinCount
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {number} proteinCount
+   */
   get proteinCount() {
-    /* Retourne un nombre */
     let proteinCount;
 
     for (let key in this._keyData) {
@@ -94,8 +151,16 @@ class UserInfosModel {
     return proteinCount;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) carbohydrateCount
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {number} carbohydrateCount
+   */
   get carbohydrateCount() {
-    /* Retourne un nombre */
     let carbohydrateCount;
 
     for (let key in this._keyData) {
@@ -105,8 +170,16 @@ class UserInfosModel {
     return carbohydrateCount;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) lipidCount
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {number} lipidCount
+   */
   get lipidCount() {
-    /* Retourne un nombre */
     let lipidCount;
 
     for (let key in this._keyData) {
@@ -116,18 +189,54 @@ class UserInfosModel {
     return lipidCount;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) hasError
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {boolean} hasError
+   */
   get hasError() {
     return this._hasError;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) errorType
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {string} errorType
+   */
   get errorType() {
     return this._errorType;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) isLoading
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {boolean} isLoading
+   */
   get isLoading() {
     return this._isLoading;
   }
 
+  /**
+   * It's a getter.
+   * 
+   * @method
+   * @name (get) isMockedData
+   * @kind property
+   * @memberof UserInfosModel
+   * @returns {boolean} isMockedData
+   */
   get isMockedData() {
     return this._isMockedData;
   }
