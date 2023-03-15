@@ -1,6 +1,22 @@
 /* Design Pattern : Constructor Pattern */
 
+/**
+ * Creating a class called UserInfosModel.
+ * Based on a Design Pattern : Constructor Pattern.
+ * 
+ * @class
+ * @name UserInfosModel
+ * @kind class
+ */
 class UserInfosModel {
+
+  /**
+   * A constructor function.
+   * 
+   * @constructor
+   * @name UserInfosModel
+   * @param {object} userData
+   */
   constructor(userData) {
     this._id = userData.userId;
     this._todayScore = userData.todayScore;

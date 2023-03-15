@@ -1,6 +1,17 @@
 import "./Message.scss";
 import PropTypes from "prop-types";
 
+
+/**
+ * A function component that takes an object as a parameter.
+ * Render a message for the user in the dashboard.
+ * 
+ * @constant
+ * @name Message
+ * @kind function
+ * @type {{ ({ infosModel }: { infosModel: object; }): JSX.Element; 
+ * propTypes: { infosModel: PropTypes.Validator<object>; }; }}
+ */
 const Message = ({ infosModel }) => {
   return (
     <section className="message">

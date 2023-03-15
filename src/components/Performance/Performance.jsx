@@ -10,6 +10,17 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 
+
+/**
+ * A function component that takes in two parameters and returns a JSX element.
+ * Render a radar chart in the dashboard.
+ * 
+ * @constant
+ * @name Performance
+ * @kind function
+ * @type {{ ({ performanceModel, outerRadiusPerformance }: { performanceModel: object; outerRadiusPerformance: string; }): JSX.Element; 
+ * propTypes: { performanceModel: PropTypes.Validator<object>; outerRadiusPerformance: PropTypes.Requireable<string>; }; }}
+ */
 const Performance = ({ performanceModel, outerRadiusPerformance }) => {
   return performanceModel.isLoading ? (
     <p

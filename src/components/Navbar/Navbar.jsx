@@ -3,6 +3,17 @@ import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo }from "../../assets/icons/logo.svg";
 import PropTypes from "prop-types";
 
+
+/**
+ * It's a function component that takes two parameters, id and navbarWidth.
+ * Render a navbar on the top of the web application.
+ * 
+ * @constant
+ * @name Navbar
+ * @kind function
+ * @type {{ ({ id, navbarWidth }: { id: number; navbarWidth: number; }): JSX.Element; 
+ * propTypes: { id: PropTypes.Requireable<number>; navbarWidth: PropTypes.Requireable<number>; }; }}
+ */
 const Navbar = ({ id, navbarWidth }) => {
   
   return (

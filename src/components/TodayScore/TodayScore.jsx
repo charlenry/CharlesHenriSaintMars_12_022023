@@ -2,6 +2,17 @@ import "./TodayScore.scss";
 import { PieChart, Pie, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
+
+/**
+ * A function component that takes in three parameters and returns a JSX element.
+ * Render the user score of the day with a pie chart in the dashboard.
+ * 
+ * @constant
+ * @name TodayScore
+ * @kind function
+ * @type {{ ({ infosModel, innerRadiusScore, outerRadiusScore }: { infosModel: any; innerRadiusScore: any; outerRadiusScore: any; }): JSX.Element; 
+ * propTypes: { infosModel: PropTypes.Validator<object>; innerRadiusScore: PropTypes.Requireable<number>; outerRadiusScore: PropTypes.Requireable<number>; }; }}
+ */
 const TodayScore = ({ infosModel, innerRadiusScore, outerRadiusScore }) => {
   return infosModel.isLoading ? (
     <p

@@ -1,6 +1,20 @@
-/* Design Pattern : Constructor Pattern */
-
+/**
+ * Creating a class called ActivityModel.
+ * Based on a Design Pattern : Constructor Pattern.
+ * 
+ * @class
+ * @name ActivityModel
+ * @kind class
+ */
 class ActivityModel {
+
+  /**
+   * A constructor function. It is called when you create a new instance of the class.
+   * 
+   * @constructor
+   * @name ActivityModel
+   * @param {object} activity
+   */
   constructor(activity) {
     this._userId = activity.userId;
     this._sessions = activity.sessions;

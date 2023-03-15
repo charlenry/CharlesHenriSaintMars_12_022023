@@ -10,6 +10,17 @@ import {
   Tooltip,
 } from "recharts";
 
+
+/**
+ * A function component that takes an object as a parameter.
+ * Render a line chart in the dashboard.
+ * 
+ * @constant
+ * @name AverageSessions
+ * @kind function
+ * @type {{ ({ averageSessionsModel }: { averageSessionsModel: object; }): JSX.Element; 
+ * propTypes: { averageSessionsModel: PropTypes.Validator<object>; }; }}
+ */
 const AverageSessions = ({ averageSessionsModel }) => {
   return averageSessionsModel.isLoading ? (
     <p

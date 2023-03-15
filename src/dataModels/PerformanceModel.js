@@ -1,6 +1,20 @@
-/* Design Pattern : Constructor Pattern */
-
+/**
+ * Creating a class called PerformanceModel.
+ * Based on a Design Pattern : Constructor Pattern.
+ * 
+ * @class
+ * @name PerformanceModel
+ * @kind class
+ */
 class PerformanceModel {
+
+  /**
+   * A constructor function.
+   * 
+   * @constructor
+   * @name PerformanceModel
+   * @param {object} performance
+   */
   constructor(performance) {
     this._userId = performance.userId;
     this._kind = performance.kind;
@@ -15,7 +29,7 @@ class PerformanceModel {
     return this._userId;
   }
 
-  /* mettre en majuscule la première lettre d'une chaine */
+  /* Capitalize the first letter of a string. */
   upperCaseFirstChar(str) {
     return (str+'').charAt(0).toUpperCase()+str.substr(1);
   }

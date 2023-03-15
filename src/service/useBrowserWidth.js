@@ -1,5 +1,16 @@
 import { useState, useEffect } from "react";
 
+
+/**
+ * A custom hook that returns the current width of the browser.
+ * It occurs after a page rendering or when resizing the browser width.
+ * 
+ * @function
+ * @name useBrowserWidth
+ * @kind function
+ * @param {any} props
+ * @returns {number} dimension
+ */
 const useBrowserWidth = (props) => {
   const [dimension, setDimension] = useState();
 

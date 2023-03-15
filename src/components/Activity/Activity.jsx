@@ -12,6 +12,18 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+
+
+/**
+ * A function component that takes in 4 parameters and returns a JSX element.
+ * Render a bar chart in the dashboard.
+ * 
+ * @constant
+ * @name Activity
+ * @kind function
+ * @type {{ ({ activityModel, activityFontSize, activityLegendTop, activityLegendLeft }: { activityModel: object; activityFontSize: number; activityLegendTop: number; activityLegendLeft: number; }): JSX.Element; 
+ * propTypes: { activityModel: PropTypes.Validator<object>; activityFontSize: PropTypes.Requireable<number>; activityLegendTop: PropTypes.Requireable<number>; activityLegendLeft: PropTypes.Requireable<number>; }; }}
+ */
 const Activity = ({ activityModel, activityFontSize, activityLegendTop, activityLegendLeft }) => {
   return activityModel.isLoading ? (
     <p

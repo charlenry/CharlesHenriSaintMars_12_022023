@@ -8,6 +8,17 @@ import Navbar from "../../components/Navbar/Navbar";
 import IconsBar from "../../components/IconsBar/IconsBar";
 // import PropTypes from "prop-types";
 
+
+/**
+ * A function component that returns a JSX element.
+ * Render the page not found.
+ * 
+ * @function
+ * @name NotFound
+ * @kind function
+ * @param {any} props
+ * @returns {JSX.Element}
+ */
 const NotFound = (props) => {
   const { id } = useParams();
   const uid = Number(id);

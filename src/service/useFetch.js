@@ -3,9 +3,23 @@ const {
   getUserById,
   getUserActivityById,
   getUserAverageSession,
-  getUserPerformance
-} = require('../mocked_data/getLocalDataLib');
+  getUserPerformance,
+} = require("../mocked_data/getLocalDataLib");
+// const fake_url = 'http://httpstat.us/404';
 
+
+
+/**
+ * A custom hook that is used to fetch data from an API server.
+ * 
+ * @function
+ * @name useFetch
+ * @kind function
+ * @param {string} url
+ * @param {number} id
+ * @param {string} serviceName
+ * @returns {{ userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }}
+ */
 function useFetch(url, id, serviceName) {
   // const [data, setData] = useState([]);
   const [userId, setUserId] = useState();
@@ -21,13 +35,22 @@ function useFetch(url, id, serviceName) {
   const [isMockedData, setIsMockedData] = useState(false);
   const uid = Number(id);
 
-
   useEffect(() => {
-    if (!url)
-      return;
+    if (!url) return;  /* exit from useEffect() */
     setIsLoading(true);
 
-    async function fetchData() { 
+
+    /**
+     * A function that is called by useEffect() and that is used to fetch data from an API.
+     * 
+     * @async
+     * @function
+     * @name fetchData
+     * @kind function
+     * @memberof useFetch.useEffect() callback
+     * @returns {Promise<void>}
+     */
+    async function fetchData() {
       try {
         const response = await fetch(url);
         const result = await response.json();
@@ -101,6 +124,17 @@ function useFetch(url, id, serviceName) {
     fetchData();
   }, [url, uid, serviceName]);
 
+
+  /**
+   * A function that is used to set the error state.
+   * 
+   * @function
+   * @name setError
+   * @kind function
+   * @memberof useFetch
+   * @param {string} errMessage
+   * @returns {void}
+   */
   function setError(errMessage) {
     setHasError(true);
     setErrorType("No user data is available");
@@ -111,7 +145,7 @@ function useFetch(url, id, serviceName) {
   // console.log('Valeur de isMockedData: ', isMockedData);
 
   if (serviceName === "mainInfo") {
-    return { userId, userInfos, todayScore, keyData, hasError, errorType, isLoading, isMockedData };
+    return {userId, userInfos, todayScore, keyData, hasError, errorType, isLoading, isMockedData };
   }
 
   if (serviceName === "activity") {
@@ -125,8 +159,6 @@ function useFetch(url, id, serviceName) {
   if (serviceName === "performance") {
     return { userId, kind, perfData, hasError, errorType, isLoading, isMockedData };
   }
-
 }
-
 
 export default useFetch;

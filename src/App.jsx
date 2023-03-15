@@ -7,6 +7,15 @@ import NotFound from './pages/NotFound/NotFound';
 import {Routes, Route} from 'react-router-dom';
 
 
+/**
+ * A function that returns a JSX element.
+ * Returns the routes of the pages.
+ * 
+ * @function
+ * @name App
+ * @kind function
+ * @returns {JSX.Element}
+ */
 function App() {
   return (
     <div className="App">

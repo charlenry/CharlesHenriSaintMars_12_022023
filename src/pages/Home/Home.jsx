@@ -6,9 +6,19 @@ import { Link } from "react-router-dom";
 import useBrowserWidth from "../../service/useBrowserWidth";
 import Navbar from "../../components/Navbar/Navbar";
 import IconsBar from "../../components/IconsBar/IconsBar";
-
 // import PropTypes' from "prop-types";
 
+
+/**
+ * A function component that returns a JSX element.
+ * Render the home page.
+ * 
+ * @function
+ * @name Home
+ * @kind function
+ * @param {any} props
+ * @returns {JSX.Element}
+ */
 const Home = (props) => {
   // const { id } = useParams();
 

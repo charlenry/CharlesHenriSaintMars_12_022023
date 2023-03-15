@@ -19,6 +19,18 @@ import AverageSessions from "../../components/AverageSessions/AverageSessions";
 import Performance from "../../components/Performance/Performance";
 // import PropTypes from "prop-types";
 
+
+/**
+ * A function component that returns a JSX element.
+ * Render the profile dashboard.
+ * It's a statefull component.
+ * 
+ * @function
+ * @name Dashboard
+ * @kind function
+ * @param {any} props
+ * @returns {JSX.Element}
+ */
 const Dashboard = (props) => {
   const { id } = useParams();
   const uid = Number(id);

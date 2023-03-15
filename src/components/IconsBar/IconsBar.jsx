@@ -6,6 +6,17 @@ import { ReactComponent as WeightliftingIcon }from "../../assets/icons/weightlif
 import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 
+
+/**
+ * A function component that returns a JSX element.
+ * Render a left aside icons bar.
+ * 
+ * @function
+ * @name IconsBar
+ * @kind function
+ * @param {any} props
+ * @returns {JSX.Element}
+ */
 const IconsBar = (props) => {
   return (
   <aside className="icons-bar">

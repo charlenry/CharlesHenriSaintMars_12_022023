@@ -5,6 +5,16 @@ import { ReactComponent as CarbsIcon } from "../../assets/icons/carbs-icon.svg";
 import { ReactComponent as FatsIcon } from "../../assets/icons/fats-icon.svg";
 import PropTypes from "prop-types";
 
+
+/**
+ * A function component that takes an object as a parameter.
+ * Render the right vertical bar containing the nutrients values.
+ * @constant
+ * @name Nutrients
+ * @kind function
+ * @type {{ ({ infosModel }: { infosModel: object; }): JSX.Element; 
+ * propTypes: { infosModel: PropTypes.Validator<object>; }; }}
+ */
 const Nutrients = ({ infosModel }) => {
   return (
     <div className="wrapper-nutrients">

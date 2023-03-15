@@ -1,6 +1,20 @@
-/* Design Pattern : Constructor Pattern */
-
+/**
+ * Creating a class called AverageSessionsModel.
+ * Based on a Design Pattern : Constructor Pattern.
+ * 
+ * @class
+ * @name AverageSessionsModel
+ * @kind class
+ */
 class AverageSessionsModel {
+
+  /**
+   * A constructor function.
+   * 
+   * @constructor
+   * @name AverageSessionsModel
+   * @param {object} averageSessions
+   */
   constructor(averageSessions) {
     this._userId = averageSessions.userId;
     this._sessions = averageSessions.sessions;

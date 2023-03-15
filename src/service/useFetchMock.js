@@ -6,6 +6,18 @@ const {
   getUserPerformance
 } = require('../mocked_data/getLocalDataLib');
 
+
+/**
+ * A custom hook that is used to fetch data from a mocked data library.
+ * 
+ * @function
+ * @name useFetch
+ * @kind function
+ * @param {string} url
+ * @param {number} id
+ * @param {string} serviceName
+ * @returns {{ userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }}
+ */
 function useFetch(url, id, serviceName) {
   // const [data, setData] = useState([]);
   const [userId, setUserId] = useState();
@@ -70,6 +82,17 @@ function useFetch(url, id, serviceName) {
     fetchData();
   }, [url, uid, serviceName]);
 
+
+  /**
+   * A function that is used to set the error state.
+   * 
+   * @function
+   * @name setError
+   * @kind function
+   * @memberof useFetch
+   * @param {string} errMessage
+   * @returns {void}
+   */
   function setError(errMessage) {
     setHasError(true);
     setErrorType("No user data is available");
