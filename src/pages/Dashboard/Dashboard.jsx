@@ -35,20 +35,16 @@ const Dashboard = (props) => {
   const { id } = useParams();
   const uid = Number(id);
 
-  /* Service retoune sous forme d'objet toutes les données de l'utilisateur à partir de son ID */
+  /* useFetchService retrieves as an object all the data of the user from his ID */
+  const data = useFetchService(uid);
+  
+ /* The data returned by useFetchService are formatted for the components */
+  const infosModel = new UserInfosModel(data.userData);
+  const activityModel = new ActivityModel(data.userActivity);
+  const averageSessionsModel = new AverageSessionsModel(data.userAverageSessions);
+  const performanceModel = new PerformanceModel(data.userPerformance);
 
-  const mainInfo = useFetchService(uid, "mainInfo");
-  const infosModel = new UserInfosModel(mainInfo.userData);
-
-  const activity = useFetchService(uid, "activity");
-  const activityModel = new ActivityModel(activity.userActivity);
-
-  const averageSessions = useFetchService(uid, "averageSessions");
-  const averageSessionsModel = new AverageSessionsModel(averageSessions.userAverageSessions);
-
-  const performance = useFetchService(uid, "performance");
-  const performanceModel = new PerformanceModel(performance.userPerformance);
-
+  /*Variables & states */
   const browserWidth = useBrowserWidth();
   const coeffDirecteur = 47.5 / 1024;
   const [navbarWidth, setNavbarWidth] = useState();

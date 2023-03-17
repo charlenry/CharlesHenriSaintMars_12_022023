@@ -1,5 +1,6 @@
 import useFetch from "./useFetch";
 
+/* URL base for the API server */
 const BASE_URL = "http://localhost:3000";
 
 
@@ -10,7 +11,6 @@ const BASE_URL = "http://localhost:3000";
  * @name useFetchService
  * @kind function
  * @param {number} id
- * @param {string} serviceName
  * @returns {{ 
  *  userData: { userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }; 
  *  userActivity: { userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }; 
@@ -18,11 +18,11 @@ const BASE_URL = "http://localhost:3000";
  *  userPerformance: { userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }; 
  * }}
  */
-const useFetchService = (id, serviceName) => {
-  const userData = useFetch(`${BASE_URL}/user/${id}`, id, serviceName);
-  const userActivity = useFetch(`${BASE_URL}/user/${id}/activity`, id, serviceName);
-  const userAverageSessions = useFetch(`${BASE_URL}/user/${id}/average-sessions`, id, serviceName);
-  const userPerformance = useFetch(`${BASE_URL}/user/${id}/performance`, id, serviceName);
+const useFetchService = (id) => {
+  const userData = useFetch(`${BASE_URL}/user/${id}`, id, 'mainInfo');
+  const userActivity = useFetch(`${BASE_URL}/user/${id}/activity`, id, 'activity');
+  const userAverageSessions = useFetch(`${BASE_URL}/user/${id}/average-sessions`, id, 'averageSessions');
+  const userPerformance = useFetch(`${BASE_URL}/user/${id}/performance`, id, 'performance');
 
   return {
     userData,

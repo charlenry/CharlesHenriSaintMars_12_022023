@@ -1,5 +1,3 @@
-/* Design Pattern : Constructor Pattern */
-
 /**
  * Creating a class called UserInfosModel.
  * Based on a Design Pattern : Constructor Pattern.
