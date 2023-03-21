@@ -15,7 +15,7 @@ const {
  * @function
  * @name useFetch
  * @kind function
- * @param {string} url
+ * @param {string} url - ${BASE_URL}/endpoint
  * @param {number} id
  * @param {string} serviceName
  * @returns {{ userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }}

@@ -38,7 +38,7 @@ const Dashboard = (props) => {
   /* useFetchService retrieves as an object all the data of the user from his ID */
   const data = useFetchService(uid);
   
- /* The data returned by useFetchService are formatted for the components */
+ /* The data returned by useFetchService are formatted via data models for the components */
   const infosModel = new UserInfosModel(data.userData);
   const activityModel = new ActivityModel(data.userActivity);
   const averageSessionsModel = new AverageSessionsModel(data.userAverageSessions);

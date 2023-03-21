@@ -5,7 +5,7 @@ const BASE_URL = "http://localhost:3000";
 
 
 /**
- * A function that takes two parameters, id and serviceName.
+ * A function that takes one parameter: id.
  * 
  * @function
  * @name useFetchService

@@ -34,8 +34,7 @@ function useFetch(url, id, serviceName) {
   const uid = Number(id);
 
   useEffect(() => {
-    if (!url)
-      return;
+    if (!url) return;  /* exit from useEffect() */
     setIsLoading(true);
 
     async function fetchData() { 
