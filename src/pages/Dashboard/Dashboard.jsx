@@ -92,7 +92,7 @@ const Dashboard = (props) => {
       setInnerRadiusScore(80);
       setOuterRadiusScore(90);
       setActivityLegendTop(-83);
-      setActivityLegendLeft(300);
+      setActivityLegendLeft(290);
     }
 
     if (browserWidth < 1180) {
