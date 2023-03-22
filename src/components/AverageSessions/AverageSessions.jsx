@@ -15,11 +15,11 @@ import {
  * A function component that takes an object as a parameter.
  * Render a line chart in the dashboard.
  * 
- * @constant
+ * @component
  * @name AverageSessions
  * @kind function
- * @type {{ ({ averageSessionsModel }: { averageSessionsModel: object; }): JSX.Element; 
- * propTypes: { averageSessionsModel: PropTypes.Validator<object>; }; }}
+ * @param { Object} averageSessionsModel - Data model for data of average sessions
+ * @returns { JSX.Element }
  */
 const AverageSessions = ({ averageSessionsModel }) => {
   return averageSessionsModel.isLoading ? (
@@ -101,6 +101,17 @@ const AverageSessions = ({ averageSessionsModel }) => {
   );
 };
 
+
+/**
+ * Custom tooltip
+ * 
+ * @component
+ * @name CustomTooltip
+ * @kind function
+ * @param { boolean } active - If set true, the tooltip is displayed
+ * @param { Object } payload - The source data of the content to be displayed in the tooltip
+ * @returns {JSX.Element}
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     // console.log("Valeur de active: ", active);
@@ -115,6 +126,8 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+
+// PropTypes
 AverageSessions.propTypes = {
   averageSessionsModel: PropTypes.object.isRequired,
 };

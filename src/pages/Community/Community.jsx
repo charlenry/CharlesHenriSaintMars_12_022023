@@ -13,11 +13,11 @@ import IconsBar from "../../components/IconsBar/IconsBar";
  * A function component that returns a JSX element.
  * Render the community page.
  * 
- * @function
+ * @component
  * @name Community
  * @kind function
- * @param {any} props
- * @returns {JSX.Element}
+ * @param { any } props - No props
+ * @returns { JSX.Element }
  */
 const Community = (props) => {
   const { id } = useParams();

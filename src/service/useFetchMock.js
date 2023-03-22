@@ -13,10 +13,10 @@ const {
  * @function
  * @name useFetch
  * @kind function
- * @param {string} url
- * @param {number} id
- * @param {string} serviceName
- * @returns {{ userId: number; userInfos: {}; todayScore: number; keyData: {}; hasError: boolean; errorType: string; isLoading: boolean; isMockedData: boolean; sessions: []; kind: {}; perfData: []; }}
+ * @param { string } url - ${BASE_URL_API}/endpoint
+ * @param { number} id - User ID
+ * @param { string } serviceName - Service name refers for data type to retrieve
+ * @returns { Object }
  */
 function useFetch(url, id, serviceName) {
   // const [data, setData] = useState([]);
@@ -89,8 +89,8 @@ function useFetch(url, id, serviceName) {
    * @name setError
    * @kind function
    * @memberof useFetch
-   * @param {string} errMessage
-   * @returns {void}
+   * @param { string } errMessage - Error message if there is any data
+   * @returns { void }
    */
   function setError(errMessage) {
     setHasError(true);

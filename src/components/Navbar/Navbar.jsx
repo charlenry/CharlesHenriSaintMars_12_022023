@@ -8,11 +8,12 @@ import PropTypes from "prop-types";
  * It's a function component that takes two parameters, id and navbarWidth.
  * Render a navbar on the top of the web application.
  * 
- * @constant
+ * @component
  * @name Navbar
  * @kind function
- * @type {{ ({ id, navbarWidth }: { id: number; navbarWidth: number; }): JSX.Element; 
- * propTypes: { id: PropTypes.Requireable<number>; navbarWidth: PropTypes.Requireable<number>; }; }}
+ * @param { number } id - User ID
+ * @param { number } navbarWidth - Navbar width
+ * @returns { JSX.Element}
  */
 const Navbar = ({ id, navbarWidth }) => {
   
@@ -27,6 +28,8 @@ const Navbar = ({ id, navbarWidth }) => {
   );
 };
 
+
+// PropTypes
 Navbar.propTypes = {
   id: PropTypes.number,
   navbarWidth: PropTypes.number,

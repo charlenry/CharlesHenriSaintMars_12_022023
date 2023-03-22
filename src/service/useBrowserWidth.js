@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
  * @function
  * @name useBrowserWidth
  * @kind function
- * @param {any} props
- * @returns {number} dimension
+ * @param { any } props - No props
+ * @returns { number }
  */
 const useBrowserWidth = (props) => {
   const [dimension, setDimension] = useState();

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: service/useFetch.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: service/useFetch.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useEffect, useState } from "react";
+const {
+  getUserById,
+  getUserActivityById,
+  getUserAverageSession,
+  getUserPerformance,
+} = require("../mocked_data/getLocalDataLib");
+// const fake_url = 'http://httpstat.us/404';
+
+
+
+/**
+ * A custom hook that is used to fetch data from an API server.
+ * 
+ * @function
+ * @name useFetch
+ * @kind function
+ * @param { string } url - ${BASE_URL_API}/endpoint
+ * @param { number} id - User ID
+ * @param { string } serviceName - Service name refers for data type to retrieve
+ * @returns { Object }
+ */
+function useFetch(url, id, serviceName) {
+  // const [data, setData] = useState([]);
+  const [userId, setUserId] = useState();
+  const [sessions, setSessions] = useState([]);
+  const [userInfos, setUserInfos] = useState({});
+  const [keyData, setKeyData] = useState({});
+  const [todayScore, setTodayScore] = useState();
+  const [kind, setKind] = useState({});
+  const [perfData, setPerfData] = useState([]);
+  const [hasError, setHasError] = useState(false);
+  const [errorType, setErrorType] = useState("No error");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isMockedData, setIsMockedData] = useState(false);
+  const uid = Number(id);
+
+  useEffect(() => {
+    if (!url) return;  /* exit from useEffect() */
+    setIsLoading(true);
+
+
+    /**
+     * A function that is called by useEffect() and that is used to fetch data from an API.
+     * 
+     * @async
+     * @function
+     * @name fetchData
+     * @kind function
+     * @memberof useFetch.useEffect() callback
+     * @returns {Promise&lt;void>}
+     */
+    async function fetchData() {
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        if (result === "can not get user") {
+          setHasError(true);
+          setErrorType("This user does not exist.");
+          console.log("Error : This user does not exist.");
+        } else if (serviceName === "mainInfo") {
+          // setData(result.data);
+          setUserId(Number(result.data.id));
+          setUserInfos(result.data.userInfos);
+          setTodayScore(result.data.todayScore);
+          setKeyData(result.data.keyData);
+          setIsMockedData(false);
+        } else if (serviceName === "activity") {
+          setUserId(Number(result.data.userId));
+          setSessions(result.data.sessions);
+          setIsMockedData(false);
+        } else if (serviceName === "averageSessions") {
+          setUserId(Number(result.data.userId));
+          setSessions(result.data.sessions);
+          setIsMockedData(false);
+        } else if (serviceName === "performance") {
+          setUserId(Number(result.data.userId));
+          setKind(result.data.kind);
+          setPerfData(result.data.data);
+          setIsMockedData(false);
+        }
+      } catch (err) {
+        if (serviceName === "mainInfo") {
+          if (getUserById(uid).length === 0) {
+            setError("Error : No user data is available");
+          } else {
+            setUserId(Number(getUserById(uid)[0].id));
+            setUserInfos(getUserById(uid)[0].userInfos);
+            setTodayScore(getUserById(uid)[0].todayScore);
+            setKeyData(getUserById(uid)[0].keyData);
+            setIsMockedData(true);
+          }
+        } else if (serviceName === "activity") {
+          if (getUserActivityById(uid).length === 0) {
+            setError("Error : No user data is available for activity");
+          } else {
+            setUserId(Number(getUserActivityById(uid)[0].userId));
+            setSessions(getUserActivityById(uid)[0].sessions);
+            setIsMockedData(true);
+          }
+        } else if (serviceName === "averageSessions") {
+          if (getUserAverageSession(uid).length === 0) {
+            setError("Error : No user data is available for average sessions");
+          } else {
+            setUserId(Number(getUserAverageSession(uid)[0].userId));
+            setSessions(getUserAverageSession(uid)[0].sessions);
+            setIsMockedData(true);
+          }
+        } else if (serviceName === "performance") {
+          if (getUserPerformance(uid).length === 0) {
+            setError("Error : No user data is available for performance");
+          } else {
+            setUserId(Number(getUserPerformance(uid)[0].userId));
+            setKind(getUserPerformance(uid)[0].kind);
+            setPerfData(getUserPerformance(uid)[0].data);
+            setIsMockedData(true);
+          }
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchData();
+  }, [url, uid, serviceName]);
+
+
+  /**
+   * A function that is used to set the error state.
+   * 
+   * @function
+   * @name setError
+   * @kind function
+   * @memberof useFetch
+   * @param { string } errMessage - Error message if there is any data
+   * @returns { void }
+   */
+  function setError(errMessage) {
+    setHasError(true);
+    setErrorType("No user data is available");
+    console.log(errMessage);
+  }
+
+  // console.log('Valeur de data from usefetch: ', data);
+  // console.log('Valeur de isMockedData: ', isMockedData);
+
+  if (serviceName === "mainInfo") {
+    return {userId, userInfos, todayScore, keyData, hasError, errorType, isLoading, isMockedData };
+  }
+
+  if (serviceName === "activity") {
+    return { userId, sessions, hasError, errorType, isLoading, isMockedData };
+  }
+
+  if (serviceName === "averageSessions") {
+    return { userId, sessions, hasError, errorType, isLoading, isMockedData };
+  }
+
+  if (serviceName === "performance") {
+    return { userId, kind, perfData, hasError, errorType, isLoading, isMockedData };
+  }
+}
+
+export default useFetch;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Activity.html">Activity</a></li><li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="App.html">App</a></li><li><a href="AverageSessions.html">AverageSessions</a></li><li><a href="AverageSessionsModel.html">AverageSessionsModel</a></li><li><a href="Community.html">Community</a></li><li><a href="CustomTooltip.html">CustomTooltip</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="Home.html">Home</a></li><li><a href="IconsBar.html">IconsBar</a></li><li><a href="Message.html">Message</a></li><li><a href="Navbar.html">Navbar</a></li><li><a href="NotFound.html">NotFound</a></li><li><a href="Nutrients.html">Nutrients</a></li><li><a href="Performance.html">Performance</a></li><li><a href="PerformanceModel.html">PerformanceModel</a></li><li><a href="Settings.html">Settings</a></li><li><a href="TodayScore.html">TodayScore</a></li><li><a href="UserInfosModel.html">UserInfosModel</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getUserActivityById">getUserActivityById</a></li><li><a href="global.html#getUserAverageSession">getUserAverageSession</a></li><li><a href="global.html#getUserById">getUserById</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li><li><a href="global.html#renderColorfulLegendText">renderColorfulLegendText</a></li><li><a href="global.html#useBrowserWidth">useBrowserWidth</a></li><li><a href="global.html#useFetch">useFetch</a></li><li><a href="global.html#useFetchService">useFetchService</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Mar 22 2023 22:51:17 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

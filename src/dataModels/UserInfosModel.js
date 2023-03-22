@@ -14,7 +14,7 @@ class UserInfosModel {
    * 
    * @constructor
    * @name UserInfosModel
-   * @param {object} userData
+   * @param { Object } userData - Main user information
    */
   constructor(userData) {
     this._id = userData.userId;
@@ -34,7 +34,7 @@ class UserInfosModel {
    * @name (get) id
    * @kind property
    * @memberof UserInfosModel
-   * @returns {number} id
+   * @returns { number } id
    */
   get id() {
     return this._id;
@@ -47,7 +47,7 @@ class UserInfosModel {
    * @name (get) todayScore
    * @kind property
    * @memberof UserInfosModel
-   * @returns {{ todayScore: number; }}  - A number in percentage
+   * @returns { Object } - The score of the day converted into object
    */
   get todayScore() {
     return {todayScore: this._todayScore * 100};
@@ -60,7 +60,7 @@ class UserInfosModel {
    * @name (get) firstName
    * @kind property
    * @memberof UserInfosModel
-   * @returns {string} firstName
+   * @returns { string } firstName
    */
   get firstName() {
     let firstName;
@@ -79,7 +79,7 @@ class UserInfosModel {
    * @name (get) lastName
    * @kind property
    * @memberof UserInfosModel
-   * @returns {string} lastName
+   * @returns { string } lastName
    */
   get lastName() {
     let lastName;
@@ -98,7 +98,7 @@ class UserInfosModel {
    * @name (get) age
    * @kind property
    * @memberof UserInfosModel
-   * @returns {number} age
+   * @returns { number } age
    */
   get age() {
     let age;
@@ -117,7 +117,7 @@ class UserInfosModel {
    * @name (get) calorieCount
    * @kind property
    * @memberof UserInfosModel
-   * @returns {number} calorieCount
+   * @returns { number } calorieCount
    */
   get calorieCount() {
     let caloriesCount;
@@ -137,7 +137,7 @@ class UserInfosModel {
    * @name (get) proteinCount
    * @kind property
    * @memberof UserInfosModel
-   * @returns {number} proteinCount
+   * @returns { number } proteinCount
    */
   get proteinCount() {
     let proteinCount;
@@ -156,7 +156,7 @@ class UserInfosModel {
    * @name (get) carbohydrateCount
    * @kind property
    * @memberof UserInfosModel
-   * @returns {number} carbohydrateCount
+   * @returns { number } carbohydrateCount
    */
   get carbohydrateCount() {
     let carbohydrateCount;
@@ -175,7 +175,7 @@ class UserInfosModel {
    * @name (get) lipidCount
    * @kind property
    * @memberof UserInfosModel
-   * @returns {number} lipidCount
+   * @returns { number } lipidCount
    */
   get lipidCount() {
     let lipidCount;
@@ -194,7 +194,7 @@ class UserInfosModel {
    * @name (get) hasError
    * @kind property
    * @memberof UserInfosModel
-   * @returns {boolean} hasError
+   * @returns { boolean } hasError
    */
   get hasError() {
     return this._hasError;
@@ -207,7 +207,7 @@ class UserInfosModel {
    * @name (get) errorType
    * @kind property
    * @memberof UserInfosModel
-   * @returns {string} errorType
+   * @returns { string } errorType
    */
   get errorType() {
     return this._errorType;
@@ -220,7 +220,7 @@ class UserInfosModel {
    * @name (get) isLoading
    * @kind property
    * @memberof UserInfosModel
-   * @returns {boolean} isLoading
+   * @returns { boolean } isLoading
    */
   get isLoading() {
     return this._isLoading;
@@ -233,7 +233,7 @@ class UserInfosModel {
    * @name (get) isMockedData
    * @kind property
    * @memberof UserInfosModel
-   * @returns {boolean} isMockedData
+   * @returns { boolean } isMockedData
    */
   get isMockedData() {
     return this._isMockedData;

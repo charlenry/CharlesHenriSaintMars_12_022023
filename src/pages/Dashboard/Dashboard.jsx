@@ -25,11 +25,11 @@ import Performance from "../../components/Performance/Performance";
  * Render the profile dashboard.
  * It's a statefull component.
  * 
- * @function
+ * @component
  * @name Dashboard
  * @kind function
- * @param {any} props
- * @returns {JSX.Element}
+ * @param { any } props - No props
+ * @returns { JSX.Element }
  */
 const Dashboard = (props) => {
   const { id } = useParams();

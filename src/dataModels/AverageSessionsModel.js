@@ -14,7 +14,7 @@ class AverageSessionsModel {
    * 
    * @constructor
    * @name AverageSessionsModel
-   * @param {object} averageSessions
+   * @param { Object } averageSessions - Data of average sessions
    */
   constructor(averageSessions) {
     this._userId = averageSessions.userId;
@@ -32,7 +32,7 @@ class AverageSessionsModel {
    * @name (get) userId
    * @kind property
    * @memberof AverageSessionsModel
-   * @returns {number} userId
+   * @returns { number } userId
    */
   get userId() {
     return this._userId;
@@ -45,7 +45,7 @@ class AverageSessionsModel {
    * @name (get) sessions
    * @kind property
    * @memberof AverageSessionsModel
-   * @returns {array} sessions
+   * @returns { Array } sessions
    */
   get sessions() {
     const daysOfWeek = {
@@ -75,7 +75,7 @@ class AverageSessionsModel {
    * @name (get) hasError
    * @kind property
    * @memberof AverageSessionsModel
-   * @returns {boolean} hasError
+   * @returns { boolean } hasError
    */
   get hasError() {
     return this._hasError;
@@ -88,7 +88,7 @@ class AverageSessionsModel {
    * @name (get) errorType
    * @kind property
    * @memberof AverageSessionsModel
-   * @returns {string} errorType
+   * @returns { string } errorType
    */
   get errorType() {
     return this._errorType;
@@ -101,7 +101,7 @@ class AverageSessionsModel {
    * @name (get) isLoading
    * @kind property
    * @memberof AverageSessionsModel
-   * @returns {boolean} isLoading
+   * @returns { boolean } isLoading
    */
   get isLoading() {
     return this._isLoading;
@@ -114,7 +114,7 @@ class AverageSessionsModel {
    * @name (get) isMockedData
    * @kind property
    * @memberof AverageSessionsModel
-   * @returns {boolean} isMockedData
+   * @returns { boolean } isMockedData
    */
   get isMockedData() {
     return this._isMockedData;

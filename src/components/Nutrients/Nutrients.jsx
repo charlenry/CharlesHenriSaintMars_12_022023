@@ -9,11 +9,12 @@ import PropTypes from "prop-types";
 /**
  * A function component that takes an object as a parameter.
  * Render the right vertical bar containing the nutrients values.
- * @constant
+ * 
+ * @component
  * @name Nutrients
  * @kind function
- * @type {{ ({ infosModel }: { infosModel: object; }): JSX.Element; 
- * propTypes: { infosModel: PropTypes.Validator<object>; }; }}
+ * @param { Object} infosModel - Data model for main user info
+ * @returns { JSX.Element}
  */
 const Nutrients = ({ infosModel }) => {
   return (
@@ -66,6 +67,8 @@ const Nutrients = ({ infosModel }) => {
   );
 };
 
+
+// PropTypes
 Nutrients.propTypes = {
   infosModel: PropTypes.object.isRequired,
 };

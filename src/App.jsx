@@ -11,10 +11,10 @@ import {Routes, Route} from 'react-router-dom';
  * A function that returns a JSX element.
  * Returns the routes of the pages.
  * 
- * @function
+ * @component
  * @name App
  * @kind function
- * @returns {JSX.Element}
+ * @returns { JSX.Element }
  */
 function App() {
   return (

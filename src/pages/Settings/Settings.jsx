@@ -13,11 +13,11 @@ import IconsBar from "../../components/IconsBar/IconsBar";
  * A function component that returns a JSX element.
  * Render the settings page.
  * 
- * @function
+ * @component
  * @name Settings
  * @kind function
- * @param {any} props
- * @returns {JSX.Element}
+ * @param { any } props - No props
+ * @returns { JSX.Element }
  */
 const Settings = (props) => {
   const { id } = useParams();

@@ -7,10 +7,9 @@ import App from './App';
 /**
  * It's creating a root element for the ReactDOM to render the app into.
  * 
- * @constant
- * @name root
- * @kind 
- * @type {ReactDOM.Root}
+ * @function ReactDOM.createRoot
+ * @param { HTMLElement } - Takes an HTMLElement in parameter
+ * @returns { Object } root object
  */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -18,9 +17,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 /**
  * It's rendering the app into the root element.
  * 
- * @constant
- * @name root
- * @type {ReactDOM.Root}
+ * @function root.render
+ * @param { JSX.Element } - Takes a JSX Element in parameter
  */
 root.render(
   <BrowserRouter basename="/CharlesHenriSaintMars_12_022023/build">

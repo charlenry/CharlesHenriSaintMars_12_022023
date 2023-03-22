@@ -7,11 +7,13 @@ import PropTypes from "prop-types";
  * A function component that takes in three parameters and returns a JSX element.
  * Render the user score of the day with a pie chart in the dashboard.
  * 
- * @constant
+ * @component
  * @name TodayScore
  * @kind function
- * @type {{ ({ infosModel, innerRadiusScore, outerRadiusScore }: { infosModel: any; innerRadiusScore: any; outerRadiusScore: any; }): JSX.Element; 
- * propTypes: { infosModel: PropTypes.Validator<object>; innerRadiusScore: PropTypes.Requireable<number>; outerRadiusScore: PropTypes.Requireable<number>; }; }}
+ * @param { Object } infosModel - Data model for main user info
+ * @param { number } innerRadiusScore - Inner radius for the pie chart
+ * @param { number } outerRadiusScore - Outer radius for the pie chart
+ * @returns { JSX.Element}
  */
 const TodayScore = ({ infosModel, innerRadiusScore, outerRadiusScore }) => {
   return infosModel.isLoading ? (
@@ -60,6 +62,8 @@ const TodayScore = ({ infosModel, innerRadiusScore, outerRadiusScore }) => {
   );
 };
 
+
+// PropTypes
 TodayScore.propTypes = {
   infosModel: PropTypes.object.isRequired,
   innerRadiusScore: PropTypes.number,

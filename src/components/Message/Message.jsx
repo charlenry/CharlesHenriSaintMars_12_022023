@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
  * A function component that takes an object as a parameter.
  * Render a message for the user in the dashboard.
  * 
- * @constant
+ * @component
  * @name Message
  * @kind function
- * @type {{ ({ infosModel }: { infosModel: object; }): JSX.Element; 
- * propTypes: { infosModel: PropTypes.Validator<object>; }; }}
+ * @param { Object } infosModel - Data model for main user info
+ * @returns {JSX.Element}
  */
 const Message = ({ infosModel }) => {
   return (
@@ -26,6 +26,8 @@ const Message = ({ infosModel }) => {
   );
 };
 
+
+// PropTypes
 Message.propTypes = {
   infosModel: PropTypes.object.isRequired,
 };

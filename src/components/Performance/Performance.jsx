@@ -15,11 +15,13 @@ import {
  * A function component that takes in two parameters and returns a JSX element.
  * Render a radar chart in the dashboard.
  * 
- * @constant
+ * @component
  * @name Performance
  * @kind function
- * @type {{ ({ performanceModel, outerRadiusPerformance }: { performanceModel: object; outerRadiusPerformance: string; }): JSX.Element; 
- * propTypes: { performanceModel: PropTypes.Validator<object>; outerRadiusPerformance: PropTypes.Requireable<string>; }; }}
+ * @param { Object} performanceModel - Data model for data of performance
+ * @param {string} outerRadiusPerformance - Outer radius for the radar chart
+ * @returns { JSX.Element }
+ * 
  */
 const Performance = ({ performanceModel, outerRadiusPerformance }) => {
   return performanceModel.isLoading ? (

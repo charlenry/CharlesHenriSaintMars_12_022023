@@ -13,11 +13,11 @@ import IconsBar from "../../components/IconsBar/IconsBar";
  * A function component that returns a JSX element.
  * Render the home page.
  * 
- * @function
+ * @component
  * @name Home
  * @kind function
- * @param {any} props
- * @returns {JSX.Element}
+ * @param { any } props - No props
+ * @returns { JSX.Element }
  */
 const Home = (props) => {
   // const { id } = useParams();

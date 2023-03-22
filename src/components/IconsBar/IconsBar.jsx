@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
  * A function component that returns a JSX element.
  * Render a left aside icons bar.
  * 
- * @function
+ * @component
  * @name IconsBar
  * @kind function
- * @param {any} props
+ * @param {any} props - No props
  * @returns {JSX.Element}
  */
 const IconsBar = (props) => {

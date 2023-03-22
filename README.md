@@ -8,3 +8,5 @@ This Frontend project is created with [Create React App](https://github.com/face
 
 3. If the API server (the backend) is not available, this web application can still work with embedded local data. Just run the command `yarn start`. Then it will open your browser at the address [http://localhost:3000/CharlesHenriSaintMars_12_022023/build](http://localhost:3000/CharlesHenriSaintMars_12_022023/build).
 
+4. The JSDoc is accessible at the address [https://charlenry.github.io/CharlesHenriSaintMars_12_022023/docs/](https://charlenry.github.io/CharlesHenriSaintMars_12_022023/docs/).
+

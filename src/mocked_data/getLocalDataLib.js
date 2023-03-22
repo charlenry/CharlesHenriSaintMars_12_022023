@@ -12,8 +12,8 @@ import {
  * @function
  * @name getUserById
  * @kind function
- * @param {number} id
- * @returns {{ id: number; userInfos: { firstName: string; lastName: string; age: number; }; todayScore: number; keyData: { calorieCount: number; proteinCount: number; carbohydrateCount: number; lipidCount: number; }; }[]}
+ * @param { number } id - User ID
+ * @returns { any[] }
  */
 const getUserById = id => USER_MAIN_DATA
     .filter(user => user.id === id)
@@ -25,8 +25,8 @@ const getUserById = id => USER_MAIN_DATA
  * @function
  * @name getUserActivityById
  * @kind function
- * @param {number} id
- * @returns {{ userId: number; sessions: { day: string; kilogram: number; calories: number; }[]; }[]}
+ * @param { number } id - User ID
+ *  @returns { any[] }
  */
 const getUserActivityById = id => USER_ACTIVITY
     .filter(userActivity => userActivity.userId === id)
@@ -38,8 +38,8 @@ const getUserActivityById = id => USER_ACTIVITY
  * @function
  * @name getUserAverageSession
  * @kind function
- * @param {number} id
- * @returns {{ userId: number; sessions: { day: number; sessionLength: number; }[]; }[]}
+ * @param { number } id - User ID
+ *  @returns { any[] }
  */
 const getUserAverageSession = id => USER_AVERAGE_SESSIONS
     .filter(userActivity => userActivity.userId === id)
@@ -51,8 +51,8 @@ const getUserAverageSession = id => USER_AVERAGE_SESSIONS
  * @function
  * @name getUserPerformance
  * @kind function
- * @param {number} id
- * @returns {{ userId: number; kind: { 1: string; 2: string; 3: string; 4: string; 5: string; 6: string; }; data: { value: number; kind: number; }[]; }[]}
+ * @param { number } id - User ID
+ *  @returns { any[] }
  */
 const getUserPerformance = id => USER_PERFORMANCE
     .filter(userPerformance => userPerformance.userId === id)

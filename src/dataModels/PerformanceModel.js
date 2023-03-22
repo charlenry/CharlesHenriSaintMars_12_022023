@@ -14,7 +14,7 @@ class PerformanceModel {
    * 
    * @constructor
    * @name PerformanceModel
-   * @param {object} performance
+   * @param { Object } performance - Data of performance
    */
   constructor(performance) {
     this._userId = performance.userId;
@@ -33,7 +33,7 @@ class PerformanceModel {
    * @name (get) userId
    * @kind property
    * @memberof PerformanceModel
-   * @returns {number} userId
+   * @returns { number } userId
    */
   get userId() {
     return this._userId;
@@ -46,8 +46,8 @@ class PerformanceModel {
    * @name upperCaseFirstChar
    * @kind method
    * @memberof PerformanceModel
-   * @param {string} str
-   * @returns {string}
+   * @param { string } str
+   * @returns { string }
    */
   upperCaseFirstChar(str) {
     return (str+'').charAt(0).toUpperCase()+str.substr(1);
@@ -60,7 +60,7 @@ class PerformanceModel {
    * @name (get) performanceData
    * @kind property
    * @memberof PerformanceModel
-   * @returns {array} performanceData
+   * @returns { array } performanceData
    */
   get performanceData() {
     
@@ -93,7 +93,7 @@ class PerformanceModel {
    * @name (get) hasError
    * @kind property
    * @memberof PerformanceModel
-   * @returns {boolean} hasError
+   * @returns { boolean } hasError
    */
   get hasError() {
     return this._hasError;
@@ -106,7 +106,7 @@ class PerformanceModel {
    * @name (get) errorType
    * @kind property
    * @memberof PerformanceModel
-   * @returns {string} errorType
+   * @returns { string } errorType
    */
   get errorType() {
     return this._errorType;
@@ -119,7 +119,7 @@ class PerformanceModel {
    * @name (get) isLoading
    * @kind property
    * @memberof PerformanceModel
-   * @returns {boolean} isLoading
+   * @returns { boolean } isLoading
    */
   get isLoading() {
     return this._isLoading;
@@ -132,7 +132,7 @@ class PerformanceModel {
    * @name (get) isMockedData
    * @kind property
    * @memberof PerformanceModel
-   * @returns {boolean} isMockedData
+   * @returns { boolean } isMockedData
    */
   get isMockedData() {
     return this._isMockedData;

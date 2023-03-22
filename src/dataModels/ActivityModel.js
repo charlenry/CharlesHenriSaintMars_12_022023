@@ -14,7 +14,7 @@ class ActivityModel {
    * 
    * @constructor
    * @name ActivityModel
-   * @param {object} activity
+   * @param { Object } activity - Data of activity
    */
   constructor(activity) {
     this._userId = activity.userId;
@@ -32,7 +32,7 @@ class ActivityModel {
    * @name (get) userId
    * @kind property
    * @memberof ActivityModel
-   * @returns {number} userId
+   * @returns { number } userId
    */
   get userId() {
     return this._userId;
@@ -45,7 +45,7 @@ class ActivityModel {
    * @name (get) sessions
    * @kind property
    * @memberof ActivityModel
-   * @returns {array} sessions
+   * @returns { Array } sessions
    */
   get sessions() {
     const newActivitySessions = this._sessions.map((value, index) => {
@@ -63,7 +63,7 @@ class ActivityModel {
    * @name (get) hasError
    * @kind property
    * @memberof ActivityModel
-   * @returns {boolean} hasError
+   * @returns { boolean } hasError
    */
   get hasError() {
     return this._hasError;
@@ -76,7 +76,7 @@ class ActivityModel {
    * @name (get) errorType
    * @kind property
    * @memberof ActivityModel
-   * @returns {string} errorType
+   * @returns { string } errorType
    */
   get errorType() {
     return this._errorType;
@@ -89,7 +89,7 @@ class ActivityModel {
    * @name (get) isLoading
    * @kind property
    * @memberof ActivityModel
-   * @returns {boolean} isLoading
+   * @returns { boolean } isLoading
    */
   get isLoading() {
     return this._isLoading;
@@ -102,7 +102,7 @@ class ActivityModel {
    * @name (get) isMockedData
    * @kind property
    * @memberof ActivityModel
-   * @returns {boolean} isMockedData
+   * @returns { boolean } isMockedData
    */
   get isMockedData() {
     return this._isMockedData;

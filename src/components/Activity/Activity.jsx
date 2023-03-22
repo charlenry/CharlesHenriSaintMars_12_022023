@@ -13,16 +13,18 @@ import {
 } from "recharts";
 
 
-
 /**
  * A function component that takes in 4 parameters and returns a JSX element.
  * Render a bar chart in the dashboard.
  * 
- * @constant
+ * @component
  * @name Activity
  * @kind function
- * @type {{ ({ activityModel, activityFontSize, activityLegendTop, activityLegendLeft }: { activityModel: object; activityFontSize: number; activityLegendTop: number; activityLegendLeft: number; }): JSX.Element; 
- * propTypes: { activityModel: PropTypes.Validator<object>; activityFontSize: PropTypes.Requireable<number>; activityLegendTop: PropTypes.Requireable<number>; activityLegendLeft: PropTypes.Requireable<number>; }; }}
+ * @param { Object } activityModel - Data model for data of activity
+ * @param { number } activityFontSize - Font size of the legend
+ * @param { number } activityLegendTop - The top position of the legend
+ * @param { number } activityLegendLeft - The left position of the legend
+ * @returns { JSX.Element }
  */
 const Activity = ({ activityModel, activityFontSize, activityLegendTop, activityLegendLeft }) => {
   return activityModel.isLoading ? (
@@ -121,6 +123,17 @@ const Activity = ({ activityModel, activityFontSize, activityLegendTop, activity
   );
 };
 
+
+/**
+ * Custom tooltip
+ * 
+ * @component
+ * @name CustomTooltip
+ * @kind function
+ * @param { boolean } active - If set true, the tooltip is displayed
+ * @param { Object } payload - The source data of the content to be displayed in the tooltip
+ * @returns {JSX.Element}
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     // console.log('Valeur de active: ', active);
@@ -136,6 +149,18 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+
+/**
+ * Allow to style each text in legend
+ * 
+ * 
+ * @function
+ * @name renderColorfulLegendText
+ * @kind function
+ * @param { string } value - The legend
+ * @param { Object } entry - Object containing the legend properties
+ * @returns {JSX.Element} - Used by formatter props of Legend component
+ */
 const renderColorfulLegendText = (value, entry) => {
   // const { color } = entry;
   // console.log(value);
@@ -144,6 +169,8 @@ const renderColorfulLegendText = (value, entry) => {
   return <span style={{ color: "#000" }}>{value}</span>;
 };
 
+
+// PropTypes
 Activity.propTypes = {
   activityModel: PropTypes.object.isRequired,
   activityFontSize: PropTypes.number,
