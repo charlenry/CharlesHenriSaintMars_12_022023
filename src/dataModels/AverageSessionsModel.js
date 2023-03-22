@@ -1,7 +1,7 @@
 /**
  * Creating a class called AverageSessionsModel.
  * Based on a Design Pattern : Constructor Pattern.
- * It allows to format the data of the average sessions usable by the components.
+ * It allows to format the data of the average sessions so that it can be used by the components.
  * 
  * @class
  * @name AverageSessionsModel
@@ -10,7 +10,7 @@
 class AverageSessionsModel {
 
   /**
-   * A constructor function.
+   * A constructor function. It is called when you create a new instance of the class.
    * 
    * @constructor
    * @name AverageSessionsModel

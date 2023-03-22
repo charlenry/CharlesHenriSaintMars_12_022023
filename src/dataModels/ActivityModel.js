@@ -1,6 +1,7 @@
 /**
  * Creating a class called ActivityModel.
  * Based on a Design Pattern : Constructor Pattern.
+ * It allows to format the data of the activity so that it can be used by the components.
  * 
  * @class
  * @name ActivityModel
@@ -10,7 +11,6 @@ class ActivityModel {
 
   /**
    * A constructor function. It is called when you create a new instance of the class.
-   * It allows to format the data of the activity usable by the components.
    * 
    * @constructor
    * @name ActivityModel

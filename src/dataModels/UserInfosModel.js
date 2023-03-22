@@ -1,7 +1,7 @@
 /**
  * Creating a class called UserInfosModel.
  * Based on a Design Pattern : Constructor Pattern.
- * It allows to format the data of the user's information usable by the components.
+ * It allows to format the data of the user's main information so that it can be used by the components.
  * 
  * @class
  * @name UserInfosModel
@@ -10,7 +10,7 @@
 class UserInfosModel {
 
   /**
-   * A constructor function.
+   * A constructor function. It is called when you create a new instance of the class.
    * 
    * @constructor
    * @name UserInfosModel
